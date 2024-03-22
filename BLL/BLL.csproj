@@ -54,6 +54,7 @@
     <Compile Include="ChiTietBaoHanhBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DanhMucBLL.cs" />
+    <Compile Include="LuongBLL.cs" />
     <Compile Include="NhaCungCapBLL.cs" />
     <Compile Include="LoginBLL.cs" />
     <Compile Include="PhanQuyenBLL.cs" />

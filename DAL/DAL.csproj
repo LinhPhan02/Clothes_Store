@@ -123,6 +123,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DanhMucDAL.cs" />
     <Compile Include="LoginDAL.cs" />
+    <Compile Include="LuongDAL.cs" />
     <Compile Include="PhanQuyenDAL.cs" />
     <Compile Include="DatabaseAcess.cs" />
     <Compile Include="NhaCungCapDAL.cs" />

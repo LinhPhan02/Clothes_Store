@@ -192,6 +192,12 @@
     <Compile Include="Popups\AddDanhMuc.Designer.cs">
       <DependentUpon>AddDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\AddHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddHopDong.Designer.cs">
+      <DependentUpon>AddHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\AddKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +439,12 @@
     <Compile Include="Screens\QuanLyKhachHang.Designer.cs">
       <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\QuanLyLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\QuanLyLuong.Designer.cs">
+      <DependentUpon>QuanLyLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\QuanLyNhaCungCap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -510,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddDanhMuc.resx">
       <DependentUpon>AddDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddHopDong.resx">
+      <DependentUpon>AddHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddKhachHang.resx">
       <DependentUpon>AddKhachHang.cs</DependentUpon>
@@ -634,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\QuanLyKhachHang.resx">
       <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\QuanLyLuong.resx">
+      <DependentUpon>QuanLyLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\QuanLyNhaCungCap.resx">
       <DependentUpon>QuanLyNhaCungCap.cs</DependentUpon>

@@ -28,7 +28,8 @@ namespace GUI
             this.btn_sanpham.Visible = false;
             this.btn_danhmuc.Visible = false;
             this.btn_nhacungcap.Visible = false;
-            this.btn_nhanvien.Visible = false;
+            this.btn_nhanvien.Visible = true;
+            this.btn_luong.Visible = true;
             this.btn_khachhang.Visible = false;
             this.btn_baohanh.Visible = false;
             this.btn_nhapxuat.Visible = false;
@@ -59,17 +60,21 @@ namespace GUI
                 }
                 else if (listLeftMenu[i] == "6")
                 {
-                    this.btn_khachhang.Visible = true;
+                    this.btn_luong.Visible = true;
                 }
                 else if (listLeftMenu[i] == "7")
                 {
-                    this.btn_baohanh.Visible = true;
+                    this.btn_khachhang.Visible = true;
                 }
                 else if (listLeftMenu[i] == "8")
                 {
-                    this.btn_nhapxuat.Visible = true;
+                    this.btn_baohanh.Visible = true;
                 }
                 else if (listLeftMenu[i] == "9")
+                {
+                    this.btn_nhapxuat.Visible = true;
+                }
+                else if (listLeftMenu[i] == "10")
                 {
                     this.btn_thongke.Visible = true;
                 }
@@ -94,6 +99,7 @@ namespace GUI
             HideBorderButton(btn_danhmuc);
             HideBorderButton(btn_nhacungcap);
             HideBorderButton(btn_nhanvien);
+            HideBorderButton(btn_luong);
             HideBorderButton(btn_khachhang);
             HideBorderButton(btn_logout);
             HideBorderButton(btn_baohanh);
@@ -110,6 +116,7 @@ namespace GUI
             btn_danhmuc.BackColor = Color.Transparent;
             btn_nhacungcap.BackColor = Color.Transparent;
             btn_nhanvien.BackColor = Color.Transparent;
+            btn_luong.BackColor = Color.Transparent;
             btn_baohanh.BackColor = Color.Transparent;
             btn_thongke.BackColor = Color.Transparent;
             btn_nhapxuat.BackColor = Color.Transparent;
@@ -127,13 +134,13 @@ namespace GUI
         {
             WindowState = FormWindowState.Minimized;
         }
-
+        
         private void btn_home_Click(object sender, EventArgs e)
         {
             trangChu1.BringToFront();
             ActiveSideBar(btn_home);
         }
-
+        
         private void btn_banhang_Click(object sender, EventArgs e)
         {
             banHang1.BringToFront();
@@ -164,7 +171,11 @@ namespace GUI
             quanLyNhanVien1.BringToFront();
             ActiveSideBar(btn_nhanvien);
         }
-
+        private void btn_salary_Click(object sender, EventArgs e)
+        {
+            quanLyLuong1.BringToFront();
+            ActiveSideBar(btn_luong);
+        }
         private void btn_khachhang_Click(object sender, EventArgs e)
         {
             quanLyKhachHang1.BringToFront();
@@ -200,6 +211,5 @@ namespace GUI
         {
             Application.Exit();
         }
-
     }
 }
