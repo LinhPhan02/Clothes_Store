@@ -30,8 +30,8 @@ namespace DAL
                 {
                     LuongDTO l = new LuongDTO();   //Khởi tạo đối tượng mới
                     l.getContract_id = read.GetString(0);
-                    l.startTime = read.GetDateTime(1);
-                    l.endTime = read.GetDateTime(2);
+                    l.startTime = read.GetString(1);
+                    l.endTime = read.GetString(2);
                     l.rangeSalary = read.GetString(3);
                     l.staff_id = read.GetString(4);
                     dsl.Add(l);   //Thêm đối tượng vừa đọc vào List
@@ -53,9 +53,9 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"INSERT INTO salary (contract_id, startTime, endTime, salary, staff_id) VALUES ('{l.getContract_id}', '{l.startTime.ToString("yyyy-MM-dd hh:mm:ss")}', '{l.endTime.ToString("yyyy-MM-dd hh:mm:ss")}', '{l.rangeSalary}','{l.staff_id}')";
+                string query = $"INSERT INTO salary (contract_id, startTime, endTime, salary, staff_id) VALUES ('{l.contract_id}', '{l.startTime}', '{l.endTime}', '{l.rangeSalary}','{l.staff_id}')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                //Thêm khách hàng mới vào CSDL
+                //Thêm hợp đồng mới vào CSDL
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -143,8 +143,8 @@ namespace DAL
                     while (read.Read())
                     {
                         l.getContract_id = read.GetString(0);
-                        l.startTime = read.GetDateTime(1);
-                        l.endTime = read.GetDateTime(2);
+                        l.startTime = read.GetString(1);
+                        l.endTime = read.GetString(2);
                         l.rangeSalary = read.GetString(3);
                         l.staff_id = read.GetString(4);
                         found.Add(l);   //Thêm đối tượng vừa đọc vào List

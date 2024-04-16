@@ -93,9 +93,9 @@ namespace GUI
             this.lbl_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_user.Location = new System.Drawing.Point(673, 36);
             this.lbl_user.Name = "lbl_user";
-            this.lbl_user.Size = new System.Drawing.Size(121, 20);
+            this.lbl_user.Size = new System.Drawing.Size(61, 20);
             this.lbl_user.TabIndex = 3;
-            this.lbl_user.Text = "Lý Thành Đạt";
+            this.lbl_user.Text = "Admin";
             // 
             // panel3
             // 
@@ -328,7 +328,7 @@ namespace GUI
             this.btn_nhapxuat.Name = "btn_nhapxuat";
             this.btn_nhapxuat.Size = new System.Drawing.Size(303, 55);
             this.btn_nhapxuat.TabIndex = 20;
-            this.btn_nhapxuat.Text = "          Nhập/Xuất";
+            this.btn_nhapxuat.Text = "          Quản lý hóa đơn";
             this.btn_nhapxuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nhapxuat.UseVisualStyleBackColor = false;
             this.btn_nhapxuat.Click += new System.EventHandler(this.btn_nhapxuat_Click);

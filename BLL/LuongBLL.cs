@@ -34,7 +34,7 @@ namespace BLL
             return qllDAL.Insert(salary);
         }
 
-        public bool Insert(string contract_id, DateTime startTime, DateTime endTime, string rangeSalary, string staff_id)
+        public bool Insert(string contract_id, string startTime, string endTime, string rangeSalary, string staff_id)
         {
             l = new LuongDTO(contract_id, startTime, endTime, rangeSalary, staff_id);
             return Insert(l);

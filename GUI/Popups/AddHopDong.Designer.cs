@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddHopDong));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.NgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.NgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAdd_NV = new System.Windows.Forms.Button();
+            this.btnAdd_HD = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,17 +49,53 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.NgayKetThuc);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.NgayBatDau);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtName);
-            this.panel1.Controls.Add(this.txtPhone);
-            this.panel1.Controls.Add(this.txtID);
+            this.panel1.Controls.Add(this.txtLuong);
+            this.panel1.Controls.Add(this.txtMaNhanVien);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(262, 31);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(403, 142);
+            this.panel1.Size = new System.Drawing.Size(403, 241);
             this.panel1.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 207);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Ngày kết thúc";
+            // 
+            // NgayKetThuc
+            // 
+            this.NgayKetThuc.Location = new System.Drawing.Point(115, 204);
+            this.NgayKetThuc.Name = "NgayKetThuc";
+            this.NgayKetThuc.Size = new System.Drawing.Size(234, 22);
+            this.NgayKetThuc.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 160);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Ngày bắt đầu";
+            // 
+            // NgayBatDau
+            // 
+            this.NgayBatDau.Location = new System.Drawing.Point(115, 157);
+            this.NgayBatDau.Name = "NgayBatDau";
+            this.NgayBatDau.Size = new System.Drawing.Size(234, 22);
+            this.NgayBatDau.TabIndex = 7;
             // 
             // label3
             // 
@@ -68,40 +107,21 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Mức lương";
             // 
-            // label2
+            // txtLuong
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tên";
+            this.txtLuong.Location = new System.Drawing.Point(114, 107);
+            this.txtLuong.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(285, 22);
+            this.txtLuong.TabIndex = 2;
             // 
-            // txtName
+            // txtMaNhanVien
             // 
-            this.txtName.Location = new System.Drawing.Point(99, 59);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(303, 22);
-            this.txtName.TabIndex = 4;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(99, 107);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(303, 22);
-            this.txtPhone.TabIndex = 2;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(99, 12);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(303, 22);
-            this.txtID.TabIndex = 1;
+            this.txtMaNhanVien.Location = new System.Drawing.Point(114, 12);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Size = new System.Drawing.Size(285, 22);
+            this.txtMaNhanVien.TabIndex = 1;
             // 
             // label1
             // 
@@ -109,46 +129,49 @@
             this.label1.Location = new System.Drawing.Point(20, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 16);
+            this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
+            this.label1.Text = "Mã nhân viên";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(30, 31);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 191);
+            this.pictureBox1.Size = new System.Drawing.Size(212, 241);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // btnAdd_NV
+            // btnAdd_HD
             // 
-            this.btnAdd_NV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnAdd_HD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd_NV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAdd_NV.FlatAppearance.BorderSize = 0;
-            this.btnAdd_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd_NV.Location = new System.Drawing.Point(553, 181);
-            this.btnAdd_NV.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd_NV.Name = "btnAdd_NV";
-            this.btnAdd_NV.Size = new System.Drawing.Size(111, 42);
-            this.btnAdd_NV.TabIndex = 20;
-            this.btnAdd_NV.Text = "Thêm";
-            this.btnAdd_NV.UseVisualStyleBackColor = false;
+            this.btnAdd_HD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAdd_HD.FlatAppearance.BorderSize = 0;
+            this.btnAdd_HD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_HD.Location = new System.Drawing.Point(550, 291);
+            this.btnAdd_HD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd_HD.Name = "btnAdd_HD";
+            this.btnAdd_HD.Size = new System.Drawing.Size(111, 42);
+            this.btnAdd_HD.TabIndex = 24;
+            this.btnAdd_HD.Text = "Thêm";
+            this.btnAdd_HD.UseVisualStyleBackColor = false;
+            this.btnAdd_HD.Click += new System.EventHandler(this.btnAdd_HD_Click);
             // 
             // AddHopDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 254);
+            this.ClientSize = new System.Drawing.Size(695, 353);
+            this.Controls.Add(this.btnAdd_HD);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnAdd_NV);
             this.Name = "AddHopDong";
             this.Text = "AddHopDong";
             this.panel1.ResumeLayout(false);
@@ -162,12 +185,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtLuong;
+        private System.Windows.Forms.TextBox txtMaNhanVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnAdd_NV;
+        private System.Windows.Forms.DateTimePicker NgayBatDau;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker NgayKetThuc;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAdd_HD;
     }
 }
