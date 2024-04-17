@@ -16,7 +16,7 @@ namespace GUI.Screens
     public partial class PhanQuyen : UserControl
     {
         private string idDanhMucNhanVien { get; set; }
-        List<CheckedPermissionsDTO> listPermission=new List<CheckedPermissionsDTO>();
+        List<CheckedPermissionsDTO> listPermission = new List<CheckedPermissionsDTO>();
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
         List<DanhMucNhanVienComboBoxDTO> listcbb = new List<DanhMucNhanVienComboBoxDTO>();
         List<CategoryStaffsDTO> listDanhMuc = new List<CategoryStaffsDTO>();
@@ -142,7 +142,7 @@ namespace GUI.Screens
             List<PhanQuyenDTO> listSearch = new List<PhanQuyenDTO>();
             if (e.KeyCode == Keys.Enter)
             {
-                for(int i = 0; i < listpq.Count; i++)
+                for (int i = 0; i < listpq.Count; i++)
                 {
                     if (listpq[i].name.IndexOf(txt_search.Text) != -1)
                     {
@@ -192,7 +192,7 @@ namespace GUI.Screens
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
                 ReadOnly = true,
                 /* AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders,*/
-                DataSource=data,
+                DataSource = data,
             };
             tbl.CellClick += Tbl_CellClick;
             tbl.SetBounds(0, 0, 740, 330);
@@ -202,60 +202,60 @@ namespace GUI.Screens
         {
             data.Rows.Clear();
             for (int i = 0; i < listpq.Count; i++)
-                {
-                    data.Rows.Add(listpq[i].id, listpq[i].name, listpq[i].createAt, listpq[i].updateAt, listpq[i].status);
-                }
+            {
+                data.Rows.Add(listpq[i].id, listpq[i].name, listpq[i].createAt, listpq[i].updateAt, listpq[i].status);
+            }
         }
 
         private void Tbl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex>=0)
+            if (e.RowIndex >= 0)
             {
                 if (tbl.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != "")
-            {
-                string iddmnv = tbl.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString();
-                string namedmnv = tbl.Rows[e.RowIndex].Cells["Tên danh mục nhân viên"].FormattedValue.ToString();
-                string createAtdmnv = tbl.Rows[e.RowIndex].Cells["Ngày tạo"].FormattedValue.ToString();
-                string updatedAtdmnv = tbl.Rows[e.RowIndex].Cells["Ngày cập nhật"].FormattedValue.ToString();
-                string statusdmnv = tbl.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
-                if (iddmnv!= "" && namedmnv != "" && createAtdmnv != "" && updatedAtdmnv != "" && statusdmnv != "")
                 {
-                    ModalPopupUpdateDMNV modalPopupUpdateDMNV = new ModalPopupUpdateDMNV(iddmnv, namedmnv, createAtdmnv);
-                    modalPopupUpdateDMNV.ShowDialog();
-                    if (modalPopupUpdateDMNV.flagupdate == true)
+                    string iddmnv = tbl.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString();
+                    string namedmnv = tbl.Rows[e.RowIndex].Cells["Tên danh mục nhân viên"].FormattedValue.ToString();
+                    string createAtdmnv = tbl.Rows[e.RowIndex].Cells["Ngày tạo"].FormattedValue.ToString();
+                    string updatedAtdmnv = tbl.Rows[e.RowIndex].Cells["Ngày cập nhật"].FormattedValue.ToString();
+                    string statusdmnv = tbl.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
+                    if (iddmnv != "" && namedmnv != "" && createAtdmnv != "" && updatedAtdmnv != "" && statusdmnv != "")
                     {
-                        for (int i = 0; i < listpq.Count; i++)
+                        ModalPopupUpdateDMNV modalPopupUpdateDMNV = new ModalPopupUpdateDMNV(iddmnv, namedmnv, createAtdmnv);
+                        modalPopupUpdateDMNV.ShowDialog();
+                        if (modalPopupUpdateDMNV.flagupdate == true)
                         {
-                            if (listpq[i].id.ToString() == iddmnv)
+                            for (int i = 0; i < listpq.Count; i++)
                             {
-                                listpq[i].name = modalPopupUpdateDMNV.pqdto.name;
-                                listpq[i].updateAt = modalPopupUpdateDMNV.pqdto.updateAt;
+                                if (listpq[i].id.ToString() == iddmnv)
+                                {
+                                    listpq[i].name = modalPopupUpdateDMNV.pqdto.name;
+                                    listpq[i].updateAt = modalPopupUpdateDMNV.pqdto.updateAt;
+                                }
                             }
+                            _loadData(listpq);
+                            modalPopupUpdateDMNV.flagupdate = false;
                         }
-                        _loadData(listpq);
-                        modalPopupUpdateDMNV.flagupdate = false;
-                    }
-                    if (modalPopupUpdateDMNV.flagdelete == true)
-                    {
-                        for (int i = 0; i < listpq.Count; i++)
+                        if (modalPopupUpdateDMNV.flagdelete == true)
                         {
-                            if (listpq[i].id.ToString() == iddmnv)
+                            for (int i = 0; i < listpq.Count; i++)
                             {
-                                listpq.Remove(listpq[i]);
+                                if (listpq[i].id.ToString() == iddmnv)
+                                {
+                                    listpq.Remove(listpq[i]);
+                                }
                             }
+                            _loadData(listpq);
+                            modalPopupUpdateDMNV.flagdelete = false;
                         }
-                        _loadData(listpq);
-                        modalPopupUpdateDMNV.flagdelete = false;
-                    }
                         listcbb = PhanQuyenBLL.GetDataComboBox();
-                }
-                else
-                {
-                    MessageBox.Show("Hãy chọn dòng có nội dung", "Thông báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hãy chọn dòng có nội dung", "Thông báo");
+                    }
                 }
             }
-            }
-            
+
         }
 
         //**************************************************************************
@@ -339,7 +339,7 @@ namespace GUI.Screens
             cbb1.SetBounds(30, 75, 200, 0);
             pnl_chondanhmucnv.Controls.Add(cbb1);
         }
-        private void _loadCheckBox(List<PermissionsDTO> listquyen,string nameTitle)
+        private void _loadCheckBox(List<PermissionsDTO> listquyen, string nameTitle)
         {
             pnl_chonquyen.Controls.Clear();
             lbl_titleChonQuyen = new Label()
@@ -385,17 +385,17 @@ namespace GUI.Screens
                     if (listPermission[j].idDanhMucNhanVien == idDanhMucNhanVien && listPermission[j].idQuyen == ck[i].Name)
                     {
                         ck[i].Checked = true;
-                    }                 
+                    }
                 }
             }
         }
         private void PhanQuyen_CheckedChanged(object sender, EventArgs e)
         {
-            for(int i=0; i<listquyen.Count; i++)
+            for (int i = 0; i < listquyen.Count; i++)
             {
-                if(ck[i].Text== (sender as CheckBox).Text )
+                if (ck[i].Text == (sender as CheckBox).Text)
                 {
-                    if(ck[i].Checked == true)
+                    if (ck[i].Checked == true)
                     {
                         PhanQuyenBLL._AddPermission(idDanhMucNhanVien, listquyen[i].urlmatch);
                     }

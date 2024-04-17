@@ -53,9 +53,9 @@ namespace GUI.Popups
 
                 l.contract_id = maHopDong;
                 l.staff_id = txtMaNhanVien.Text;
-                l.rangeSalary = txtLuong.Text;
-                l.startTime = NgayBatDau.Value.ToString("yyyy-MM-dd");
-                l.endTime = NgayKetThuc.Value.ToString("yyyy-MM-dd");
+                l.rangeSalary = Int32.Parse(txtLuong.Text);
+                l.startTime = NgayBatDau.Value.ToString("MM-dd-yyyy");
+                l.endTime = NgayKetThuc.Value.ToString("MM-dd-yyyy");
 
                 if (qllBLL.Insert(l.contract_id, l.startTime, l.endTime, l.rangeSalary, l.staff_id))
                 {

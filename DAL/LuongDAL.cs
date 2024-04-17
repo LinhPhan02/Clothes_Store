@@ -32,7 +32,7 @@ namespace DAL
                     l.getContract_id = read.GetString(0);
                     l.startTime = read.GetString(1);
                     l.endTime = read.GetString(2);
-                    l.rangeSalary = read.GetString(3);
+                    l.rangeSalary = read.GetInt32(3);
                     l.staff_id = read.GetString(4);
                     dsl.Add(l);   //Thêm đối tượng vừa đọc vào List
                 }
@@ -70,64 +70,7 @@ namespace DAL
             }
 
         }
-        /*
-        public bool Update(string phone, string pass, string name, int type)
-        {
-            conn.Open();
-            try
-            {
-                LuongDTO nv = new LuongDTO();
-                string query = "UPDATE staffs SET "
-                    + "phoneNumber = '" + phone
-                    + "',password = '" + pass
-                    + "',name = '" + name
-                    + "',updatedAt = '" + nv.updatedAt.ToString("yyyy-MM-dd hh:mm:ss")
-                    + "',CategoryStaffs_id = '" + type
-                    + "' where phoneNumber='" + phone + "'";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
-                cmd.ExecuteNonQuery();
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
-                return false;
-            }
-            finally
-            {
-                conn.Close();   //Đóng kết nối
-            }
-        }
         
-        //Xoá theo số điện thoại
-        public bool Delete(string index)
-        {
-            conn.Open();
-            try
-            {
-                foreach (LuongDTO nv in dsnv)
-                {
-                    if (nv.phone.Equals(index)) //Nếu số điện thoại bằng giá trị ô được chọn của cột "Số điện thoại" thì mới cập nhật lại status
-                    {
-                        string query = "UPDATE staffs SET status = '" + nv.status + "' WHERE phoneNumber = '" + index + "'";
-                        MySqlCommand cmd = new MySqlCommand(query, conn);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
-                return false;
-            }
-            finally
-            {
-                conn.Close();   //Đóng kết nối
-            }
-        }
-        */
         public List<LuongDTO> Search(string text)
         {
             text = text.ToLower();
@@ -145,7 +88,7 @@ namespace DAL
                         l.getContract_id = read.GetString(0);
                         l.startTime = read.GetString(1);
                         l.endTime = read.GetString(2);
-                        l.rangeSalary = read.GetString(3);
+                        l.rangeSalary = read.GetInt32(3);
                         l.staff_id = read.GetString(4);
                         found.Add(l);   //Thêm đối tượng vừa đọc vào List
                     }
@@ -174,8 +117,8 @@ namespace DAL
             DataTable dtb = new DataTable();    //Khởi tạo bảng, sau đó thêm các cột và gán kiểu dữ liệu
             dtb.Columns.Add("STT", typeof(int));
             dtb.Columns.Add("Số HĐ", typeof(string));
-            dtb.Columns.Add("Ngày bắt đầu", typeof(DateTime));
-            dtb.Columns.Add("Ngày kết thúc", typeof(DateTime));
+            dtb.Columns.Add("Ngày bắt đầu", typeof(string));
+            dtb.Columns.Add("Ngày kết thúc", typeof(string));
             dtb.Columns.Add("Mức lương", typeof(int));
             dtb.Columns.Add("Mã nhân viên", typeof(string));
 
@@ -195,58 +138,10 @@ namespace DAL
                 {
                     data["STT"] = i + 1;    //set số thứ tự tăng dần cho bảng
                 }
-                /*
-                if (nv.status == 1)  //Nếu status bằng 1 thì mới hiển thị ra bảng
-                {
-                    DataRow data = dtb.NewRow();
-
-                    data["Họ tên"] = nv.name;
-                    data["Số điện thoại"] = nv.phone;
-                    data["Mật khẩu"] = nv.pass;
-                    data["Loại nhân viên"] = nv.type;
-                    data["Ngày tạo"] = nv.createdAt;
-                    data["Ngày cập nhật"] = nv.updatedAt;
-
-                    dtb.Rows.Add(data); //Thêm đối tượng vào bảng
-
-                    for (int i = 0; i < dtb.Rows.Count; i++)
-                    {
-                        data["STT"] = i + 1;    //set số thứ tự tăng dần cho bảng
-                    }
-                }
-                */
+                
             }
             return dtb;
         }
-        /*
-        public List<CategoryStaffsDTO> LoadCategoryStaff()
-        {
-            List<CategoryStaffsDTO> list = new List<CategoryStaffsDTO>();
-            try
-            {
-                conn.Open();
-                string query = "SELECT * FROM categorystaffs where status = 1";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader read = cmd.ExecuteReader();
-                dsnv = new List<LuongDTO>();
-                while (read.Read())
-                {
-                    CategoryStaffsDTO ct = new CategoryStaffsDTO(read.GetInt32("id").ToString(), read.GetString("name"));
-                    list.Add(ct);
-                }
-                conn.Close();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error: " + ex); //Hiển thị lỗi nếu có
-            }
-            finally
-            {
-                conn.Close();   //Đóng kết nối
-            }
-
-            return list;
-        }
-        */
+        
     }
 }

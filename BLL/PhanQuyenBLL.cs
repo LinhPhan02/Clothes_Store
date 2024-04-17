@@ -63,10 +63,11 @@ namespace BLL
         }
         public static bool AddData(int id, string name)
         {
-            if(id+"" == "")
+            if (id + "" == "")
             {
                 return false;
-            }else if (name == "")
+            }
+            else if (name == "")
             {
                 return false;
             }

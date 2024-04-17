@@ -11,7 +11,7 @@ namespace DAL
 {
     public class PhanQuyenDAL
     {
-        public static int idNext=0;
+        public static int idNext = 0;
 
         public static List<CheckedPermissionsDTO> _GetDataCheckedPermissions()
         {
@@ -73,7 +73,7 @@ namespace DAL
             conn.Close();
             return data;
         }
-        
+
         public static List<CategoryStaffsDTO> GetDataCategoryStaffs()
         {
             List<CategoryStaffsDTO> data = new List<CategoryStaffsDTO>();
@@ -89,7 +89,7 @@ namespace DAL
             conn.Close();
             return data;
         }
-        
+
         public static List<DanhMucNhanVienComboBoxDTO> GetDataComboBox()
         {
             List<DanhMucNhanVienComboBoxDTO> data = new List<DanhMucNhanVienComboBoxDTO>();
@@ -99,7 +99,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                DanhMucNhanVienComboBoxDTO dmnvcbbDTO = new DanhMucNhanVienComboBoxDTO(dr.GetString("id"),dr.GetString("name"));
+                DanhMucNhanVienComboBoxDTO dmnvcbbDTO = new DanhMucNhanVienComboBoxDTO(dr.GetString("id"), dr.GetString("name"));
                 data.Add(dmnvcbbDTO);
             }
             conn.Close();
@@ -113,7 +113,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                idNext=dr.GetInt32("id");
+                idNext = dr.GetInt32("id");
             }
             conn.Close();
             return idNext;
@@ -145,7 +145,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-              data.Add(dr.GetString("CategoryStaffs_id"));
+                data.Add(dr.GetString("CategoryStaffs_id"));
             }
             conn.Close();
             return data;
@@ -158,7 +158,7 @@ namespace DAL
             {
                 MySqlConnection conn = SqlConnectionData.Connect();
                 conn.Open();
-                MySqlCommand cmd= new MySqlCommand($"INSERT INTO  categorystaffs VALUE({id},'{name}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','1')",conn);
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO  categorystaffs VALUE({id},'{name}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','1')", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }
