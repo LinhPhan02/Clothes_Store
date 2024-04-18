@@ -53,6 +53,7 @@
     <Compile Include="DanhMucNhanVienComboBoxDTO.cs" />
     <Compile Include="hoadonDTO.cs" />
     <Compile Include="KhachHangDTO.cs" />
+    <Compile Include="KhuyenMaiDTO.cs" />
     <Compile Include="LuongDTO.cs" />
     <Compile Include="NhaCungCapDTO.cs" />
     <Compile Include="LoginDTO.cs" />

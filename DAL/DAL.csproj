@@ -120,6 +120,7 @@
     <Compile Include="ChiTietBaoHanhDAL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DanhMucDAL.cs" />
+    <Compile Include="KhuyenMaiDAL.cs" />
     <Compile Include="LoginDAL.cs" />
     <Compile Include="LuongDAL.cs" />
     <Compile Include="PhanQuyenDAL.cs" />

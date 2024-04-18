@@ -12,7 +12,7 @@ namespace GUI.Screens
 {
     public partial class BanHang : UserControl
     {
-        public BanHang()
+        public BanHang() //hiển thị sản phẩm
         {
             InitializeComponent();
             sanPhamBanHang1.BringToFront();

@@ -94,7 +94,9 @@
       <HintPath>..\packages\MySql.Data.8.3.0\lib\net48\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
@@ -201,6 +203,12 @@
     </Compile>
     <Compile Include="Popups\AddKhachHang.Designer.cs">
       <DependentUpon>AddKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddKhuyenMai.Designer.cs">
+      <DependentUpon>AddKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="Popups\AddNhaCungCap.cs">
       <SubType>Form</SubType>
@@ -395,6 +403,12 @@
     <Compile Include="Screens\GioHangQLSP.Designer.cs">
       <DependentUpon>GioHangQLSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\KhuyenMai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\KhuyenMai.Designer.cs">
+      <DependentUpon>KhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\NhaCungCap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -527,6 +541,9 @@
     <EmbeddedResource Include="Popups\AddKhachHang.resx">
       <DependentUpon>AddKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddKhuyenMai.resx">
+      <DependentUpon>AddKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddNhaCungCap.resx">
       <DependentUpon>AddNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,6 +643,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GioHangQLSP.resx">
       <DependentUpon>GioHangQLSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\KhuyenMai.resx">
+      <DependentUpon>KhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
