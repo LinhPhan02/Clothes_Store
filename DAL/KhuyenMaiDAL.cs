@@ -54,7 +54,6 @@ namespace DAL
             {
                 string query = $"INSERT INTO discount (discount_id, discount_name, description, start_day, end_day, discount_amount) VALUES ('{km.discount_id}', '{km.discount_name}', '{km.description}', '{km.start_day}','{km.end_day}', '{km.discount_amount}')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                //Thêm hợp đồng mới vào CSDL
                 cmd.ExecuteNonQuery();
                 return true;
             }

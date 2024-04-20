@@ -33,7 +33,7 @@ namespace BLL
             return KmDAL.Insert(discount);
         }
 
-        public bool Insert(string discount_id, string discount_name, string description, string start_day, string end_day, int discount_amount)
+        public bool Insert(string discount_id, string discount_name, string description, string start_day, string end_day, int discount_amount) 
         {
             km = new KhuyenMaiDTO(discount_id, discount_name, description, start_day, end_day, discount_amount);
             return Insert(km);
@@ -45,6 +45,11 @@ namespace BLL
             dskm = KmDAL.Search(text, number);
             //Tìm kiếm mã giảm 
             return KmDAL.Show(dskm);
+        }
+
+        public static bool Insert(string textboxMaKM, string textboxGiamGia, DateTime dayBD, DateTime dayKT)
+        {
+            throw new NotImplementedException();
         }
     }
 }
