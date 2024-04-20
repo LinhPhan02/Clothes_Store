@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,7 +111,7 @@ namespace DAL
             return productQL;
         }
 
-      public static List<SpQLSPDTO> GetDatacbbProducer()
+        public static List<SpQLSPDTO> GetDatacbbProducer()
         {
             List<SpQLSPDTO> productQL = new List<SpQLSPDTO>();
             MySqlConnection conn = SqlConnectionData.Connect();
@@ -134,7 +135,7 @@ namespace DAL
             return productQL;
         }
 
-
+       
 
 
 

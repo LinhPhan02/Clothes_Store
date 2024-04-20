@@ -26,6 +26,7 @@ namespace GUI
         {
             this.btn_banhang.Visible = false;
             this.btn_sanpham.Visible = false;
+            this.btn_khuyenmai.Visible = true;
             this.btn_danhmuc.Visible = false;
             this.btn_nhacungcap.Visible = false;
             this.btn_nhanvien.Visible = true;
@@ -96,6 +97,7 @@ namespace GUI
             HideBorderButton(btn_banhang);
             HideBorderButton(btn_home);
             HideBorderButton(btn_sanpham);
+            HideBorderButton(btn_khuyenmai);
             HideBorderButton(btn_danhmuc);
             HideBorderButton(btn_nhacungcap);
             HideBorderButton(btn_nhanvien);
@@ -113,6 +115,7 @@ namespace GUI
             btn_banhang.BackColor = Color.Transparent;
             btn_home.BackColor = Color.Transparent;
             btn_sanpham.BackColor = Color.Transparent;
+            btn_khuyenmai.BackColor = Color.Transparent;
             btn_danhmuc.BackColor = Color.Transparent;
             btn_nhacungcap.BackColor = Color.Transparent;
             btn_nhanvien.BackColor = Color.Transparent;
@@ -151,6 +154,12 @@ namespace GUI
         {
             quanLySanPham1.BringToFront();
             ActiveSideBar(btn_sanpham);
+        }
+
+        private void btn_khuyenmai_Click(object sender, EventArgs e)
+        {
+            khuyenMai1.BringToFront();
+            ActiveSideBar(btn_khuyenmai);
         }
 
         private void btn_danhmuc_Click(object sender, EventArgs e)
@@ -211,5 +220,7 @@ namespace GUI
         {
             Application.Exit();
         }
+
+        
     }
 }

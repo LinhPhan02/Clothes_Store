@@ -209,7 +209,7 @@ namespace GUI.Screens
 
         }
 
-        int Total(List<spcbhDTO> cart)
+        int Total(List<spcbhDTO> cart) //add khuyến mãi để tính total
         {
             int sum = 0;
             for (int i = 0; i < cart.Count; i++)
