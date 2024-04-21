@@ -155,7 +155,7 @@ namespace GUI.Popups
             this.Controls.Add(this.pictureBox1);
             this.Name = "UpdateSanPhamNhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cập nhật sản phẩm nhà cung cấp";
+            this.Text = "Cập nhật thông tin sản phẩm nhà cung cấp";
             this.Load += new System.EventHandler(this.UpdateSanPhamNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

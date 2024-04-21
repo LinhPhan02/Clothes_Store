@@ -14,35 +14,52 @@ namespace GUI.Popups
 {
     public partial class AddKhuyenMai : Form
     {
+        KhuyenMaiBLL qlkmBLL = new KhuyenMaiBLL();
+        KhuyenMaiDTO km = new KhuyenMaiDTO();
         public AddKhuyenMai()
         {
             InitializeComponent();
         }
-
-        private void btn_Them_Click(object sender, EventArgs e)
+        public void Clear()
         {
-            try
-            {
-                string textboxMaKM = txtMaKM.Text;
-                string textboxGiamGia = txtGiamGia.Text;
-               
-                DateTime dayBD = dateTimePicker1.Value;
-                DateTime dayKT = dateTimePicker2.Value;
+            txtTenKM.Text = txtGiamGia.Text = string.Empty;
+        }
 
-                bool success = KhuyenMaiBLL.Insert(textboxMaKM, textboxGiamGia, dayBD, dayKT);
-                if (success)
+        public bool Check()
+        {
+            TextBox[] text = { txtTenKM, txtGiamGia };
+            foreach (TextBox txt in text)
+            {
+                if (txt.Text == "")
                 {
-                    MessageBox.Show("Khuyến mãi mới thêm thành công.");
-                }
-                else
-                {
-                    MessageBox.Show("Khuyến mãi chưa hợp lệ!");
+                    MessageBox.Show("Không được để trống thông tin!");
+                    txt.Focus();
+                    return false;
                 }
             }
-            catch (Exception ex)
+
+            return true;
+        }
+        private void btn_AddKM_Click(object sender, EventArgs e)
+        {
+            if (Check())
             {
-                // Xử lý ngoại lệ nếu có
-                MessageBox.Show("Error: " + ex.Message);
+                // Tạo đối tượng Random để tạo số ngẫu nhiên
+                Random random = new Random();
+                // Tạo mã hợp đồng
+                string maKhuyenMai = "KM" + random.Next(1000, 10000).ToString();
+
+                km.discount_id = maKhuyenMai;
+                km.discount_name = txtTenKM.Text;
+                km.discount_amount = Int32.Parse(txtGiamGia.Text);
+                km.start_day = BatDauKM.Value.ToString("MM-dd-yyyy");
+                km.end_day = KetThucKM.Value.ToString("MM-dd-yyyy");
+
+                if (qlkmBLL.Insert(km.discount_id, km.discount_name, km.start_day, km.end_day, km.discount_amount))
+                {
+                    MessageBox.Show("Thêm thành công!");
+                }
+                Clear();
             }
         }
     }

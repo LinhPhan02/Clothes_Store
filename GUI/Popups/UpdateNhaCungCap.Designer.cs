@@ -133,7 +133,7 @@ namespace GUI.Popups
             this.MaximizeBox = false;
             this.Name = "UpdateNhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateNhaCungCap";
+            this.Text = "Cập nhật thông tin nhà cung cấp";
             this.Load += new System.EventHandler(this.UpdateNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxDTOBindingSource)).EndInit();
             this.ResumeLayout(false);

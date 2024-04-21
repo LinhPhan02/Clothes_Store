@@ -78,7 +78,6 @@ namespace GUI.Screens
             this.sanPhamBanHang1.Name = "sanPhamBanHang1";
             this.sanPhamBanHang1.Size = new System.Drawing.Size(960, 564);
             this.sanPhamBanHang1.TabIndex = 5;
-            this.sanPhamBanHang1.Load += new System.EventHandler(this.sanPhamBanHang1_Load_1);
             // 
             // BanHang
             // 
@@ -91,7 +90,6 @@ namespace GUI.Screens
             this.Controls.Add(this.button1);
             this.Name = "BanHang";
             this.Size = new System.Drawing.Size(1015, 715);
-            this.Load += new System.EventHandler(this.BanHang_Load);
             this.ResumeLayout(false);
 
         }

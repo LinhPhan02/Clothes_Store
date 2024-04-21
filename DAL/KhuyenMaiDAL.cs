@@ -29,10 +29,9 @@ namespace DAL
                     KhuyenMaiDTO km = new KhuyenMaiDTO();   //Khởi tạo đối tượng mới
                     km.getDiscount_id = read.GetString(0);
                     km.discount_name = read.GetString(1);
-                    km.description = read.GetString(2);
-                    km.start_day = read.GetString(3);
-                    km.end_day= read.GetString(4);
-                    km.discount_amount = read.GetInt32(5);
+                    km.start_day = read.GetString(2);
+                    km.end_day= read.GetString(3);
+                    km.discount_amount = read.GetInt32(4);
                     DsKM.Add(km);   //Thêm đối tượng vừa đọc vào List
                 }
                 conn.Close();
@@ -52,7 +51,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"INSERT INTO discount (discount_id, discount_name, description, start_day, end_day, discount_amount) VALUES ('{km.discount_id}', '{km.discount_name}', '{km.description}', '{km.start_day}','{km.end_day}', '{km.discount_amount}')";
+                string query = $"INSERT INTO discount (discount_id, discount_name, start_day, end_day, discount_amount) VALUES ('{km.discount_id}', '{km.discount_name}', '{km.start_day}','{km.end_day}', '{km.discount_amount}')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -86,10 +85,9 @@ namespace DAL
                     {
                         km.getDiscount_id = read.GetString(0);
                         km.discount_name = read.GetString(1);
-                        km.description = read.GetString(2);
-                        km.start_day = read.GetString(3);
-                        km.end_day = read.GetString(4);
-                        km.discount_amount = read.GetInt32(5);
+                        km.start_day = read.GetString(2);
+                        km.end_day = read.GetString(3);
+                        km.discount_amount = read.GetInt32(4);
                         found.Add(km);   //Thêm đối tượng vừa đọc vào List
                     }
                     conn.Close();   //Sau mỗi lần đọc lần đóng kết nối lại
@@ -118,10 +116,9 @@ namespace DAL
             dtb.Columns.Add("STT", typeof(int));
             dtb.Columns.Add("Mã khuyến mãi", typeof(string));
             dtb.Columns.Add("Tên khuyến mãi", typeof(string));
-            dtb.Columns.Add("Mô tả khuyến mãi", typeof(string));
             dtb.Columns.Add("Ngày bắt đầu", typeof(string));
             dtb.Columns.Add("Ngày kết thúc", typeof(string));
-            dtb.Columns.Add("Phần trăm giảm", typeof (string));
+            dtb.Columns.Add("Giảm giá (%)", typeof (int));
 
             foreach (KhuyenMaiDTO km in DsKM)
             {
@@ -129,10 +126,9 @@ namespace DAL
 
                 data["Mã khuyến mãi"] = km.getDiscount_id;
                 data["Tên khuyến mãi"] = km.discount_name;
-                data["Mô tả khuyến mãi"] = km.description;
                 data["Ngày bắt đầu"] = km.start_day;
                 data["Ngày kết thúc"] = km.end_day;
-                data["Phần trăm giảm"] = km.discount_amount;
+                data["Giảm giá (%)"] = km.discount_amount;
 
                 dtb.Rows.Add(data); //Thêm đối tượng vào bảng
 
