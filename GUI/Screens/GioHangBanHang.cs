@@ -211,10 +211,16 @@ namespace GUI.Screens
 
         int Total(List<spcbhDTO> cart) //add khuyến mãi để tính total
         {
+            KhuyenMaiDTO km = new KhuyenMaiDTO();
             int sum = 0;
             for (int i = 0; i < cart.Count; i++)
             {
                 sum += int.Parse(cart[i].Prices);
+                if (txt_nhapKM.Text != "")
+                {
+                    txt_nhapKM.Text = km.discount_id;
+                    sum = sum + (sum * km.discount_amount / 100);
+                }
             }
             return sum;
         }

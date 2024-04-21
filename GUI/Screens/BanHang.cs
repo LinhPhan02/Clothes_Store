@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,38 +13,20 @@ namespace GUI.Screens
 {
     public partial class BanHang : UserControl
     {
-        public BanHang() //hiển thị sản phẩm
+        public BanHang()
         {
             InitializeComponent();
             sanPhamBanHang1.BringToFront();
-            sanPhamBanHang1.resetData();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             sanPhamBanHang1.BringToFront();
-            sanPhamBanHang1.resetData();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            gioHangBanHang2.BringToFront();
-            gioHangBanHang2.resetData();
-        }
-
-        private void sanPhamBanHang1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sanPhamBanHang1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BanHang_Load(object sender, EventArgs e)
-        {
-
+            gioHangBanHang1.BringToFront();
         }
     }
 }

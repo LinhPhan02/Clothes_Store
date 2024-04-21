@@ -26,11 +26,11 @@ namespace GUI
         {
             this.btn_banhang.Visible = false;
             this.btn_sanpham.Visible = false;
-            this.btn_khuyenmai.Visible = true;
+            this.btn_khuyenmai.Visible = false;
             this.btn_danhmuc.Visible = false;
             this.btn_nhacungcap.Visible = false;
-            this.btn_nhanvien.Visible = true;
-            this.btn_luong.Visible = true;
+            this.btn_nhanvien.Visible = false;
+            this.btn_luong.Visible = false;
             this.btn_khachhang.Visible = false;
             this.btn_baohanh.Visible = false;
             this.btn_nhapxuat.Visible = false;
@@ -61,23 +61,23 @@ namespace GUI
                 }
                 else if (listLeftMenu[i] == "6")
                 {
-                    this.btn_luong.Visible = true;
+                    this.btn_khachhang.Visible = true;
                 }
                 else if (listLeftMenu[i] == "7")
                 {
-                    this.btn_khachhang.Visible = true;
+                    this.btn_luong.Visible = true;
                 }
                 else if (listLeftMenu[i] == "8")
                 {
-                    this.btn_baohanh.Visible = true;
+                    this.btn_nhapxuat.Visible = true;
                 }
                 else if (listLeftMenu[i] == "9")
                 {
-                    this.btn_nhapxuat.Visible = true;
+                    this.btn_thongke.Visible = true;
                 }
                 else if (listLeftMenu[i] == "10")
                 {
-                    this.btn_thongke.Visible = true;
+                    this.btn_khuyenmai.Visible = true;
                 }
             }
             if (Login.id_Privilege_group == "0")
@@ -221,6 +221,104 @@ namespace GUI
             Application.Exit();
         }
 
-        
+        private void khuyenMai1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_user_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void logo_text_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void quanLyLuong1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phanQuyen1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanLyNhanVien1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanLyKhachHang1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void banHang1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nhapXuat1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanLyBaoHanh1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanLyDanhMuc1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanLyNhaCungCap1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanLySanPham1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thongKe1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trangChu1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

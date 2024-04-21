@@ -152,7 +152,7 @@ namespace GUI.Popups
             this.Controls.Add(this.panel1);
             this.Name = "UpdateSanPhamQLSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateSanPhamQLSP";
+            this.Text = "Cập nhật thông tin sản phẩm";
             this.Load += new System.EventHandler(this.UpdateSanPhamQLSP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

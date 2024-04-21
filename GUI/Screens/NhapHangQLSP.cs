@@ -96,7 +96,7 @@ namespace GUI.Screens
 
                 pnlProduct[i] = new Panel();
                 pnlProduct[i].BorderStyle = BorderStyle.FixedSingle;
-                pnlProduct[i].Size = new Size(670, 64);
+                pnlProduct[i].Size = new Size(686, 64);
 
 
                 id[i] = new Label();
@@ -108,14 +108,14 @@ namespace GUI.Screens
                 id[i].TextAlign = ContentAlignment.MiddleCenter;
 
                 name[i] = new Label();
-                name[i].Size = new Size(104, 44);
+                name[i].Size = new Size(140, 44);
                 name[i].ForeColor = Color.Black;
                 name[i].Font = SmallFont;
                 name[i].Text = productCtl[i].Name.ToString();
                 name[i].Margin = new Padding(2, 0, 2, 0);
-                name[i].Location = new Point(40, 9);
-                name[i].TextAlign = ContentAlignment.MiddleCenter;
-
+                name[i].Location = new Point(74, 9);
+                name[i].TextAlign = ContentAlignment.MiddleLeft;
+                /*
                 type[i] = new Label();
                 type[i].Size = new Size(100, 20);
                 type[i].Font = SmallFont;
@@ -124,9 +124,9 @@ namespace GUI.Screens
                 type[i].Text = productCtl[i].Type.ToString();
                 type[i].Location = new Point(160, 22);
                 type[i].TextAlign = ContentAlignment.MiddleCenter;
-
+                */
                 img[i] = new PictureBox();
-                img[i].Location = new Point(290, 10);
+                img[i].Location = new Point(260, 10);
                 img[i].Size = new Size(70, 45);
                 img[i].Margin = new Padding(2, 0, 2, 0);
                 img[i].Name = productCtl[i].Image;
@@ -158,7 +158,7 @@ namespace GUI.Screens
                 btnEdit[i].TextAlign = ContentAlignment.MiddleCenter;
                 btnEdit[i].Name = productCtl[i].Id.ToString();
                 btnEdit[i].Click += handleAddToCart;
-
+                /*
                 if (Login._checkUrlMatch("themvaogio:QLSP"))
                 {
                     btnEdit[i].Visible = true;
@@ -167,7 +167,7 @@ namespace GUI.Screens
                 {
                     btnEdit[i].Visible = false;
                 }
-
+                */
                 pnlProduct[i].Controls.Add(id[i]);
                 pnlProduct[i].Controls.Add(name[i]);
                 pnlProduct[i].Controls.Add(type[i]);

@@ -79,7 +79,6 @@ namespace GUI.Screens
                 id[i].Text = carts[i].Id.ToString();
                 id[i].TextAlign = ContentAlignment.MiddleCenter;
 
-
                 name[i] = new Label();
                 name[i].Size = new Size(104, 30);
                 name[i].ForeColor = Color.Black;
