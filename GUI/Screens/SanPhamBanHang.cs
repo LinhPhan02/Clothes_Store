@@ -22,36 +22,50 @@ namespace GUI.Screens
 
         List<SpQLSPDTO> spbhSearch = new List<SpQLSPDTO>();
          public static List<spcbhDTO> cartbh = new List<spcbhDTO>();
+        Panel[] pnlProduct;
+        Label[] id;
+        Label[] name;
+        Label[] type;
+        PictureBox[] img;
+        Label[] price;
+        Label[] origin;
+        Label[] producer;
+        Button[] button;
 
         public SanPhamBanHang()
         {
             InitializeComponent();
+            //loadDataToDataSPBH(productCtl);
+        }
+
+        public void resetData()
+        {
+            productCtl = SpQLSPBLL.GetDataAction();
+
             loadDataToDataSPBH(productCtl);
         }
-       
-
-        private void loadDataToDataSPBH(List<SpQLSPDTO> productCtl)
+        public void loadDataToDataSPBH(List<SpQLSPDTO> productCtl)  //Trước khi sửa là private
         {
             panelForm.Controls.Clear();
             panelForm.Refresh();
-            Panel[] pnlProduct = new Panel[productCtl.Count];
-            Label[] id = new Label[productCtl.Count];
-            Label[] name = new Label[productCtl.Count];
-            Label[] type = new Label[productCtl.Count];
-            PictureBox[] img = new PictureBox[productCtl.Count];
-            Label[] price = new Label[productCtl.Count];
-            Label[] origin = new Label[productCtl.Count];
-            Label[] producer = new Label[productCtl.Count];
-            Button[] button = new Button[productCtl.Count];
+            pnlProduct = new Panel[productCtl.Count];
+            id = new Label[productCtl.Count];
+            name = new Label[productCtl.Count];
+            type = new Label[productCtl.Count];
+            img = new PictureBox[productCtl.Count];
+            price = new Label[productCtl.Count];
+            origin = new Label[productCtl.Count];
+            producer = new Label[productCtl.Count];
+            button = new Button[productCtl.Count];
             Font SmallFont = new Font("Arial", 11);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+           // ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
 
 
             for (int i = 0; i < productCtl.Count; i++)
             {
                 pnlProduct[i] = new Panel();
                 pnlProduct[i].BorderStyle = BorderStyle.FixedSingle;
-                pnlProduct[i].Size = new Size(670, 64);
+                pnlProduct[i].Size = new Size(686, 64);
 
 
                 id[i] = new Label();
@@ -63,14 +77,14 @@ namespace GUI.Screens
                 id[i].TextAlign = ContentAlignment.MiddleCenter;
 
                 name[i] = new Label();
-                name[i].Size = new Size(104, 44);
+                name[i].Size = new Size(140, 44);
                 name[i].ForeColor = Color.Black;
                 name[i].Font = SmallFont;
                 name[i].Text = productCtl[i].Name.ToString();
                 name[i].Margin = new Padding(2, 0, 2, 0);
-                name[i].Location = new Point(40, 9);
-                name[i].TextAlign = ContentAlignment.MiddleCenter;
-
+                name[i].Location = new Point(74, 9);
+                name[i].TextAlign = ContentAlignment.MiddleLeft;
+                /*
                 type[i] = new Label();
                 type[i].Size = new Size(100, 40);
                 type[i].Font = SmallFont;
@@ -79,9 +93,9 @@ namespace GUI.Screens
                 type[i].Text = productCtl[i].Type.ToString();
                 type[i].Location = new Point(160, 22);
                 type[i].TextAlign = ContentAlignment.MiddleCenter;
-
+                */
                 img[i] = new PictureBox();
-                img[i].Location = new Point(290, 10);
+                img[i].Location = new Point(260, 10);
                 img[i].Size = new Size(70, 45);
                 img[i].Margin = new Padding(2, 0, 2, 0);
                 img[i].Name = productCtl[i].Image;
@@ -114,7 +128,7 @@ namespace GUI.Screens
                 button[i].Name = id[i].Text;
                 button[i].Click += HandleShowChild;
 
-
+                /*
                 if (Login._checkUrlMatch("chonsanphammua:BH"))
                 {
                     button[i].Visible = true;
@@ -123,7 +137,7 @@ namespace GUI.Screens
                 {
                     button[i].Visible = false;
                 }
-
+                */
                 pnlProduct[i].Controls.Add(id[i]);
                 pnlProduct[i].Controls.Add(name[i]);
                 pnlProduct[i].Controls.Add(type[i]);
@@ -138,15 +152,6 @@ namespace GUI.Screens
             }
         }
 
-
-  
-
-        public void resetData()
-        {
-            productCtl = SpQLSPBLL.GetDataAction();
-
-            loadDataToDataSPBH(productCtl);
-        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -190,12 +195,6 @@ namespace GUI.Screens
         }
 
  
-
-        private void SanPhamBanHangcs_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
 
         void HandleShowChild(object sender, EventArgs e)
         {

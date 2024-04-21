@@ -74,7 +74,7 @@ namespace GUI.Screens
             // 
             // sanPhamBanHang1
             // 
-            this.sanPhamBanHang1.Location = new System.Drawing.Point(40, 52);
+            this.sanPhamBanHang1.Location = new System.Drawing.Point(25, 52);
             this.sanPhamBanHang1.Name = "sanPhamBanHang1";
             this.sanPhamBanHang1.Size = new System.Drawing.Size(960, 564);
             this.sanPhamBanHang1.TabIndex = 5;

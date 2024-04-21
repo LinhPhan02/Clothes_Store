@@ -36,18 +36,18 @@ namespace GUI.Screens
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(318, 28);
+            this.button2.Location = new System.Drawing.Point(290, 28);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(69, 28);
             this.button2.TabIndex = 7;
-            this.button2.Text = "search";
+            this.button2.Text = "Tìm";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 30);
+            this.textBox1.Location = new System.Drawing.Point(17, 31);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(262, 22);
@@ -58,10 +58,10 @@ namespace GUI.Screens
             // 
             this.panelForm.AutoScroll = true;
             this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelForm.Location = new System.Drawing.Point(37, 75);
+            this.panelForm.Location = new System.Drawing.Point(17, 75);
             this.panelForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(873, 475);
+            this.panelForm.Size = new System.Drawing.Size(926, 475);
             this.panelForm.TabIndex = 12;
             this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
@@ -75,7 +75,6 @@ namespace GUI.Screens
             this.Name = "SanPhamBanHang";
             this.Size = new System.Drawing.Size(960, 564);
             this.Load += new System.EventHandler(this.SanPhamBanHang_Load);
-            this.Click += new System.EventHandler(this.SanPhamBanHangcs_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

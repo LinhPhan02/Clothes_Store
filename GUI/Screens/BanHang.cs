@@ -22,11 +22,13 @@ namespace GUI.Screens
         private void button1_Click(object sender, EventArgs e)
         {
             sanPhamBanHang1.BringToFront();
+            sanPhamBanHang1.resetData();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            gioHangBanHang1.BringToFront();
+            gioHangBanHang2.BringToFront();
+            gioHangBanHang2.resetData();
         }
     }
 }
