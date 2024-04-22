@@ -56,7 +56,6 @@ namespace GUI
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_baohanh = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_khuyenmai1 = new System.Windows.Forms.Button();
             this.khuyenMai1 = new GUI.Screens.KhuyenMai();
             this.quanLyLuong1 = new GUI.Screens.QuanLyLuong();
             this.phanQuyen1 = new GUI.Screens.PhanQuyen();
@@ -70,6 +69,7 @@ namespace GUI
             this.quanLySanPham1 = new GUI.Screens.QuanLySanPham();
             this.thongKe1 = new GUI.Screens.ThongKe();
             this.trangChu1 = new GUI.Screens.TrangChu();
+            this.btn_khuyenmai1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hide)).BeginInit();
@@ -337,7 +337,7 @@ namespace GUI
             this.btn_nhapxuat.Name = "btn_nhapxuat";
             this.btn_nhapxuat.Size = new System.Drawing.Size(303, 55);
             this.btn_nhapxuat.TabIndex = 20;
-            this.btn_nhapxuat.Text = "          Quản lý hóa đơn";
+            this.btn_nhapxuat.Text = "          Quản lý nhập xuất";
             this.btn_nhapxuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nhapxuat.UseVisualStyleBackColor = false;
             this.btn_nhapxuat.Click += new System.EventHandler(this.btn_nhapxuat_Click);
@@ -425,23 +425,6 @@ namespace GUI
             this.panel4.Size = new System.Drawing.Size(1015, 715);
             this.panel4.TabIndex = 4;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // btn_khuyenmai1
-            // 
-            this.btn_khuyenmai1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_khuyenmai1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_khuyenmai1.ForeColor = System.Drawing.Color.White;
-            this.btn_khuyenmai1.Image = global::GUI.Properties.Resources.icons8_edit_property_24px;
-            this.btn_khuyenmai1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_khuyenmai1.Location = new System.Drawing.Point(3, 328);
-            this.btn_khuyenmai1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_khuyenmai1.Name = "btn_khuyenmai1";
-            this.btn_khuyenmai1.Size = new System.Drawing.Size(341, 69);
-            this.btn_khuyenmai1.TabIndex = 15;
-            this.btn_khuyenmai1.Text = "          Quản lý khuyến mãi";
-            this.btn_khuyenmai1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_khuyenmai1.UseVisualStyleBackColor = false;
-            this.btn_khuyenmai1.Click += new System.EventHandler(this.btn_khuyenmai_Click);
             // 
             // khuyenMai1
             // 
@@ -570,6 +553,23 @@ namespace GUI
             this.trangChu1.Size = new System.Drawing.Size(1015, 715);
             this.trangChu1.TabIndex = 0;
             this.trangChu1.Load += new System.EventHandler(this.trangChu1_Load);
+            // 
+            // btn_khuyenmai1
+            // 
+            this.btn_khuyenmai1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_khuyenmai1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_khuyenmai1.ForeColor = System.Drawing.Color.White;
+            this.btn_khuyenmai1.Image = global::GUI.Properties.Resources.icons8_edit_property_24px;
+            this.btn_khuyenmai1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_khuyenmai1.Location = new System.Drawing.Point(3, 328);
+            this.btn_khuyenmai1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_khuyenmai1.Name = "btn_khuyenmai1";
+            this.btn_khuyenmai1.Size = new System.Drawing.Size(341, 69);
+            this.btn_khuyenmai1.TabIndex = 15;
+            this.btn_khuyenmai1.Text = "          Quản lý khuyến mãi";
+            this.btn_khuyenmai1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_khuyenmai1.UseVisualStyleBackColor = false;
+            this.btn_khuyenmai1.Click += new System.EventHandler(this.btn_khuyenmai_Click);
             // 
             // Form1
             // 

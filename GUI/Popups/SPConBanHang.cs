@@ -71,7 +71,7 @@ namespace GUI.Screens
                 pnlProduct[i].Size = new Size(440, 60);
 
                 idSPC[i] = new Label();
-                idSPC[i].Location = new Point(26, 23);
+                idSPC[i].Location = new Point(22, 18);
                 idSPC[i].Size = new Size(35, 17);
                 idSPC[i].Margin = new Padding(2, 0, 2, 0);
                 idSPC[i].Font = SmallFont;
@@ -88,7 +88,7 @@ namespace GUI.Screens
 
                 img[i] = new PictureBox();
                 img[i].Location = new Point(230, 4);
-                img[i].Size = new Size(90, 50);
+                img[i].Size = new Size(70, 45);
                 img[i].Margin = new Padding(2, 0, 2, 0);
                 img[i].Name = productCon[i].Imgsp;
                 img[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +102,7 @@ namespace GUI.Screens
                 btnAdd[i].TextAlign = ContentAlignment.MiddleCenter;
                 btnAdd[i].Name = idSPC[i].Text;
                 btnAdd[i].Click += ButtonAddClick;
-
+                /*
                 if (Login._checkUrlMatch("themvaogio:BH"))
                 {
                     btnAdd[i].Visible = true;
@@ -111,9 +111,9 @@ namespace GUI.Screens
                 {
                     btnAdd[i].Visible = false;
                 }
+                */
 
-
-                    pnlProduct[i].Controls.Add(idSPC[i]);
+                pnlProduct[i].Controls.Add(idSPC[i]);
                 pnlProduct[i].Controls.Add(nameSPC[i]);
                 pnlProduct[i].Controls.Add(img[i]);
                 pnlProduct[i].Controls.Add(btnAdd[i]);

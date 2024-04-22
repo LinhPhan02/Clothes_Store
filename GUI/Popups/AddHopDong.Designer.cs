@@ -172,6 +172,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "AddHopDong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm hợp đồng";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
