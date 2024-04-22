@@ -94,6 +94,7 @@
             this.btn_Them.Text = "Thêm ➕";
             this.btn_Them.UseVisualStyleBackColor = false;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            this.btn_Them.Enter += new System.EventHandler(this.btn_Them_Enter);
             // 
             // dateTimePicker2
             // 
