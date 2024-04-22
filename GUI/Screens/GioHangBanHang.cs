@@ -37,7 +37,7 @@ namespace GUI.Screens
             pnlProduct = new Panel[carts.Count];
             idSPC = new Label[carts.Count];
             name = new Label[carts.Count];
-           img = new PictureBox[carts.Count];
+            img = new PictureBox[carts.Count];
             price = new Label[carts.Count];
             origin = new Label[carts.Count];
             btnEdit = new Button[carts.Count];
@@ -47,10 +47,10 @@ namespace GUI.Screens
             {
                 pnlProduct[i] = new Panel();
                 pnlProduct[i].BorderStyle = BorderStyle.FixedSingle;
-                pnlProduct[i].Size = new Size(670, 64);
+                pnlProduct[i].Size = new Size(686, 64);
 
                 idSPC[i] = new Label();
-                idSPC[i].Location = new Point(20, 18);
+                idSPC[i].Location = new Point(15, 17);
                 idSPC[i].Size = new Size(40, 25);
                 idSPC[i].Margin = new Padding(2, 0, 2, 0);
                 idSPC[i].Font = SmallFont;
@@ -58,13 +58,22 @@ namespace GUI.Screens
                 idSPC[i].TextAlign = ContentAlignment.MiddleCenter;
 
                 name[i] = new Label();
-                name[i].Size = new Size(120, 44);
+                name[i].Size = new Size(140, 44);
                 name[i].ForeColor = Color.Black;
                 name[i].Font = SmallFont;
                 name[i].Text = carts[i].Namesp.ToString();
                 name[i].Margin = new Padding(2, 0, 2, 0);
-                name[i].Location = new Point(70, 7);
-                name[i].TextAlign = ContentAlignment.MiddleCenter;
+                name[i].Location = new Point(74, 7);
+                name[i].TextAlign = ContentAlignment.MiddleLeft;
+
+                img[i] = new PictureBox();
+                img[i].Location = new Point(260, 10);
+                img[i].Size = new Size(70, 45);
+                img[i].Margin = new Padding(2, 0, 2, 0);
+                img[i].Name = carts[i].Imgsp;
+                img[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                img[i].Image = new Bitmap(carts[i].Imgsp);
+
 
                 price[i] = new Label();
                 price[i].Size = new Size(70, 44);
@@ -72,7 +81,7 @@ namespace GUI.Screens
                 price[i].Font = SmallFont;
                 price[i].Text = carts[i].Prices.ToString();
                 price[i].Margin = new Padding(2, 0, 2, 0);
-                price[i].Location = new Point(220, 7);
+                price[i].Location = new Point(370, 7);
                 price[i].TextAlign = ContentAlignment.MiddleCenter;
 
                 origin[i] = new Label();
@@ -81,16 +90,8 @@ namespace GUI.Screens
                 origin[i].Font = SmallFont;
                 origin[i].Text = carts[i].Origin.ToString();
                 origin[i].Margin = new Padding(2, 0, 2, 0);
-                origin[i].Location = new Point(330, 7);
+                origin[i].Location = new Point(480, 9);
                 origin[i].TextAlign = ContentAlignment.MiddleCenter;
-
-                img[i] = new PictureBox();
-                img[i].Location = new Point(430, 5);
-                img[i].Size = new Size(90, 50);
-                img[i].Margin = new Padding(2, 0, 2, 0);
-                img[i].Name = carts[i].Imgsp;
-                img[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-                img[i].Image = new Bitmap(carts[i].Imgsp);
 
                 btnEdit[i] = new Button();
                 btnEdit[i].Text = "Xóa";
@@ -208,18 +209,21 @@ namespace GUI.Screens
             loadDataToProductNCC(SanPhamBanHang.cartbh);
 
         }
-
+        private List<KhuyenMaiDTO> km;
+        private KhuyenMaiBLL qlkm = new KhuyenMaiBLL();
         int Total(List<spcbhDTO> cart) //add khuyến mãi để tính total
         {
-            KhuyenMaiDTO km = new KhuyenMaiDTO();
+            km = qlkm.readDB();
             int sum = 0;
             for (int i = 0; i < cart.Count; i++)
             {
                 sum += int.Parse(cart[i].Prices);
-                if (txt_nhapKM.Text != "")
+                foreach (KhuyenMaiDTO k in km)
                 {
-                    txt_nhapKM.Text = km.discount_id;
-                    sum = sum + (sum * km.discount_amount / 100);
+                    if (maKH == k.discount_id)
+                    {
+                        sum = sum - (sum * k.discount_amount / 100);
+                    }
                 }
             }
             return sum;
@@ -301,6 +305,12 @@ namespace GUI.Screens
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+        string maKH;
+        private void btn_confirmKM_Click(object sender, EventArgs e)
+        {
+            maKH = txt_nhapKM.Text;
+            label8.Text = Total(SanPhamBanHang.cartbh).ToString();
         }
     }
 }

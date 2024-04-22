@@ -243,6 +243,7 @@ namespace GUI.Screens
             this.btn_confirmKM.TabIndex = 13;
             this.btn_confirmKM.Text = "Xác nhận";
             this.btn_confirmKM.UseVisualStyleBackColor = false;
+            this.btn_confirmKM.Click += new System.EventHandler(this.btn_confirmKM_Click);
             // 
             // label6
             // 
