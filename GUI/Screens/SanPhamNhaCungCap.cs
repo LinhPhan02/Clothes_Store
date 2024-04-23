@@ -29,6 +29,7 @@ namespace GUI.Screens
         {
             InitializeComponent();
             initDatagridView();
+            /*
             if (Login._checkUrlMatch("themsanphamnhacungcap:QLNCC"))
             {
                 btn_add_spncc.Visible = true;
@@ -53,6 +54,7 @@ namespace GUI.Screens
             {
                 btn_import.Visible = false;
             }
+            */
             txt_search_spncc.GotFocus += RemoveText;
             txt_search_spncc.LostFocus += AddText;
 

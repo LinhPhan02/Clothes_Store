@@ -20,6 +20,7 @@ namespace GUI.Screens
         public QuanLyKhachHang()
         {
             InitializeComponent();
+            /*
             if (Login._checkUrlMatch("themkhachhang:QLKH"))
             {
                 btnAdd_KH.Visible = true;
@@ -28,6 +29,7 @@ namespace GUI.Screens
             {
                 btnAdd_KH.Visible = false;
             }
+            */
         }
 
         private void btnAdd_KH_Click(object sender, EventArgs e)

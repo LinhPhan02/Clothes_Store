@@ -102,7 +102,7 @@ namespace GUI.Screens
                 btnAdd[i].TextAlign = ContentAlignment.MiddleCenter;
                 btnAdd[i].Name = idSPC[i].Text;
                 btnAdd[i].Click += ButtonAddClick;
-                /*
+                
                 if (Login._checkUrlMatch("themvaogio:BH"))
                 {
                     btnAdd[i].Visible = true;
@@ -111,7 +111,7 @@ namespace GUI.Screens
                 {
                     btnAdd[i].Visible = false;
                 }
-                */
+                
 
                 pnlProduct[i].Controls.Add(idSPC[i]);
                 pnlProduct[i].Controls.Add(nameSPC[i]);

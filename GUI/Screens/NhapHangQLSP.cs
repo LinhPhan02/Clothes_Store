@@ -158,7 +158,7 @@ namespace GUI.Screens
                 btnEdit[i].TextAlign = ContentAlignment.MiddleCenter;
                 btnEdit[i].Name = productCtl[i].Id.ToString();
                 btnEdit[i].Click += handleAddToCart;
-                /*
+                
                 if (Login._checkUrlMatch("themvaogio:QLSP"))
                 {
                     btnEdit[i].Visible = true;
@@ -167,7 +167,7 @@ namespace GUI.Screens
                 {
                     btnEdit[i].Visible = false;
                 }
-                */
+                
                 pnlProduct[i].Controls.Add(id[i]);
                 pnlProduct[i].Controls.Add(name[i]);
                 pnlProduct[i].Controls.Add(type[i]);

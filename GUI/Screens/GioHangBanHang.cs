@@ -171,7 +171,7 @@ namespace GUI.Screens
             xuatInput.CustomerPhone = phone;
             xuatInput.Total = Total(SanPhamBanHang.cartbh);
 
-            PhieuXuatDTO xuat = new PhieuXuatDTO();
+            PhieuXuatDTO xuat;
             xuat = BanHangBLL.AddBill(xuatInput);
             BanHangBLL.UpdateTotalCustomer(xuat);
 
@@ -198,7 +198,7 @@ namespace GUI.Screens
             }
 
 
-            BanHangBLL.AddDetailMaintain(xuat.CustomerPhone, SanPhamBanHang.cartbh, productIds);
+            //BanHangBLL.AddDetailMaintain(xuat.CustomerPhone, SanPhamBanHang.cartbh, productIds);
 
             MessageBox.Show("Thanh toán thành công");
 

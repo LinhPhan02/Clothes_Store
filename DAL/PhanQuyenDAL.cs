@@ -67,29 +67,27 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                PermissionsDTO quyenDTO = new PermissionsDTO(dr.GetString("name"), dr.GetString("url_match_privilege_id"));
+                PermissionsDTO quyenDTO = new PermissionsDTO(dr.GetString("name"), dr.GetString("url_match"));
                 data.Add(quyenDTO);
             }
             conn.Close();
             return data;
         }
-
         public static List<CategoryStaffsDTO> GetDataCategoryStaffs()
         {
             List<CategoryStaffsDTO> data = new List<CategoryStaffsDTO>();
             MySqlConnection conn = SqlConnectionData.Connect();
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `users` WHERE 1", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `privilege_group` WHERE 1", conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                CategoryStaffsDTO ctgrSDTO = new CategoryStaffsDTO(dr.GetString("CategoryStaffs_id"), dr.GetString("type"));
+                CategoryStaffsDTO ctgrSDTO = new CategoryStaffsDTO(dr.GetString("id"), dr.GetString("name"));
                 data.Add(ctgrSDTO);
             }
             conn.Close();
             return data;
         }
-
         public static List<DanhMucNhanVienComboBoxDTO> GetDataComboBox()
         {
             List<DanhMucNhanVienComboBoxDTO> data = new List<DanhMucNhanVienComboBoxDTO>();

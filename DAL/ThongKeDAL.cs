@@ -9,7 +9,7 @@ namespace DAL
 {
     public class ThongKeDAL
     {
-        public static string tongDoanhThu, tienNhap, tienXuat, check;
+        public static int tongDoanhThu, tienNhap, tienXuat, check;
 
         public static void _getDataGia(string dayStart, string dayEnd)
         {
@@ -22,9 +22,9 @@ namespace DAL
             int indexTienXuat = dr.GetOrdinal("tienxuat");
             while (dr.Read())
             {             
-                 tongDoanhThu = dr.IsDBNull(indexTongDoanhThu)? "0":dr.GetString("tongdoanhthu");
-                 tienNhap = dr.IsDBNull(indexTienNhap) ? "0" : dr.GetString("tiennhap");
-                 tienXuat = dr.IsDBNull(indexTienXuat) ? "0" : dr.GetString("tienxuat");
+                 tongDoanhThu = dr.IsDBNull(indexTongDoanhThu)? 0 :dr.GetInt32("tongdoanhthu");
+                 tienNhap = dr.IsDBNull(indexTienNhap) ? 0 : dr.GetInt32("tiennhap");
+                 tienXuat = dr.IsDBNull(indexTienXuat) ? 0 : dr.GetInt32("tienxuat");
             }
             conn.Close();
         }
