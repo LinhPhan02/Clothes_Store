@@ -19,7 +19,7 @@ namespace GUI
             HideBordersButton();
             trangChu1.BringToFront();
             ActiveSideBar(btn_home);
-            lbl_user.Text = Login.user.Type;
+            lbl_user.Text = Login.user.Name;
             Privilege();
         }
         public void Privilege()

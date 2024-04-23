@@ -125,7 +125,7 @@ namespace GUI.Screens
                 btnEdit[i].TextAlign = ContentAlignment.MiddleCenter;
                 btnEdit[i].Name = id[i].Text;
                 btnEdit[i].Click += HandleUpdate;
-                /*
+                
                 if (Login._checkUrlMatch("suasanpham:QLSP"))
                 {
                     btnEdit[i].Visible = true;
@@ -134,7 +134,7 @@ namespace GUI.Screens
                 {
                     btnEdit[i].Visible = false;
                 }
-                */
+                
                 pnlProduct[i].Controls.Add(id[i]);
                 pnlProduct[i].Controls.Add(name[i]);
                 pnlProduct[i].Controls.Add(type[i]);

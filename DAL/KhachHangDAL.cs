@@ -33,7 +33,6 @@ namespace DAL
                     kh.Name = read.GetString(1);
                     kh.CreatedAt = read.GetDateTime(2);
                     kh.UpdatedAt = read.GetDateTime(3);
-                    //kh.ToTal = read.GetInt32(1);
                     kh.ToTal = read.GetInt32(4);
                     //kh.Status = read.GetInt32(5);
                     dskh.Add(kh);   //Thêm đối tượng vừa đọc vào List
@@ -146,7 +145,7 @@ namespace DAL
                         kh.CreatedAt = read.GetDateTime(2);
                         kh.UpdatedAt = read.GetDateTime(3);
                         kh.ToTal = read.GetInt32(4);
-                        kh.Status = read.GetInt32(5);
+                        //kh.Status = read.GetInt32(5);
                         found.Add(kh);   //Thêm đối tượng vừa đọc vào List
                     }
                     conn.Close(); //Sau mỗi lần đọc lần đóng kết nối lại

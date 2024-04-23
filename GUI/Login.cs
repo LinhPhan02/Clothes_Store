@@ -71,9 +71,10 @@ namespace GUI
         }
         public static bool _checkUrlMatch(string urlMatch)
         {
+            //Console.WriteLine(urlMatch);
             for (int i=0; i< Login.listUrlMatch.Count; i++)
             {
-                if(urlMatch== listUrlMatch[i])
+                if (urlMatch == listUrlMatch[i])
                 {
                     return true;
                 }

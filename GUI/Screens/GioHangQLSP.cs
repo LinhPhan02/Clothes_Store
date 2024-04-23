@@ -39,6 +39,7 @@ namespace GUI.Screens
         public GioHangQLSP()
         {
             InitializeComponent();
+            
             if (Login._checkUrlMatch("thanhtoangiohang:QLSP"))
             {
                 button2.Visible = true;
@@ -47,6 +48,7 @@ namespace GUI.Screens
             {
                 button2.Visible = false;
             }
+            
             loadDataToCart(NhapHangQLSP.cart);
         }
         public void loadDataToCart(List<spnccDTO> carts)
@@ -69,25 +71,25 @@ namespace GUI.Screens
             {
                 pnlProduct[i] = new Panel();
                 pnlProduct[i].BorderStyle = BorderStyle.FixedSingle;
-                pnlProduct[i].Size = new Size(680, 64);
+                pnlProduct[i].Size = new Size(686, 64);
 
                 id[i] = new Label();
-                id[i].Location = new Point(17, 24);
-                id[i].Size = new Size(25, 17);
+                id[i].Location = new Point(15, 17);
+                id[i].Size = new Size(40, 25);
                 id[i].Margin = new Padding(2, 0, 2, 0);
                 id[i].Font = SmallFont;
                 id[i].Text = carts[i].Id.ToString();
                 id[i].TextAlign = ContentAlignment.MiddleCenter;
 
                 name[i] = new Label();
-                name[i].Size = new Size(104, 30);
+                name[i].Size = new Size(120, 44);
                 name[i].ForeColor = Color.Black;
                 name[i].Font = SmallFont;
                 name[i].Text = carts[i].Name.ToString();
                 name[i].Margin = new Padding(2, 0, 2, 0);
-                name[i].Location = new Point(36, 15);
-                name[i].TextAlign = ContentAlignment.MiddleCenter;
-
+                name[i].Location = new Point(74, 7);
+                name[i].TextAlign = ContentAlignment.MiddleLeft;
+                
                 type[i] = new Label();
                 type[i].Size = new Size(100, 17);
                 type[i].Font = SmallFont;
@@ -95,36 +97,36 @@ namespace GUI.Screens
                 type[i].Text = carts[i].Type.ToString();
                 type[i].Location = new Point(150, 24);
                 type[i].TextAlign = ContentAlignment.MiddleCenter;
-
+                
                 img[i] = new PictureBox();
-                img[i].Location = new Point(270, 5);
-                img[i].Size = new Size(90,52);
+                img[i].Location = new Point(255, 10);
+                img[i].Size = new Size(70, 45);
                 img[i].Margin = new Padding(2, 0, 2, 0);
                 img[i].Name = carts[i].Image;
                 img[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                 img[i].Image = new Bitmap(carts[i].Image);
 
                 price[i] = new Label();
-                price[i].Size = new Size(65, 23);
+                price[i].Size = new Size(65, 44);
                 price[i].Font = SmallFont;
                 price[i].Margin = new Padding(2, 0, 2, 0);
                 price[i].Text = carts[i].Prices.ToString();
-                price[i].Location = new Point(380, 21);
+                price[i].Location = new Point(365, 7);
                 price[i].TextAlign = ContentAlignment.MiddleCenter;
 
                 origin[i] = new Label();
-                origin[i].Size = new Size(50, 17);
+                origin[i].Size = new Size(50, 44);
                 origin[i].Font = SmallFont;
                 origin[i].Margin = new Padding(2, 0, 2, 0);
                 origin[i].Text = carts[i].Origin.ToString();
-                origin[i].Location = new Point(460, 23);
+                origin[i].Location = new Point(465, 11);
                 origin[i].TextAlign = ContentAlignment.MiddleCenter;
 
                 quantity[i] = new Label();
                 quantity[i].Size = new Size(30, 17);
                 quantity[i].Font = SmallFont;
                 quantity[i].Margin = new Padding(2, 0, 2, 0);
-                quantity[i].Location = new Point(530, 23);
+                quantity[i].Location = new Point(525, 23);
                 quantity[i].Text = carts[i].Quantity.ToString();
 
 
@@ -276,9 +278,9 @@ namespace GUI.Screens
                         if (item.Id.ToString() == editgh.cart.Id.ToString())
                         {
                             item.Quantity = editgh.cart.Quantity;
-                        resetData();
+                            resetData();
                             
-                        break;
+                            break;
                         }
                     }
                 }

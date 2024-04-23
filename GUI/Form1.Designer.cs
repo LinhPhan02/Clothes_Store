@@ -241,7 +241,7 @@ namespace GUI
             this.btn_khuyenmai.Name = "btn_khuyenmai";
             this.btn_khuyenmai.Size = new System.Drawing.Size(303, 55);
             this.btn_khuyenmai.TabIndex = 25;
-            this.btn_khuyenmai.Text = "         Quản lý khuyến mãi";
+            this.btn_khuyenmai.Text = "          Quản lý khuyến mãi";
             this.btn_khuyenmai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_khuyenmai.UseVisualStyleBackColor = false;
             this.btn_khuyenmai.Click += new System.EventHandler(this.btn_khuyenmai_Click);

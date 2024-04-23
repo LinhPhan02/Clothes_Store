@@ -13,11 +13,17 @@ namespace DAL
     {
         public static PhieuXuatDTO AddBill(PhieuXuatDTO xuat)
         {
+            // Tạo đối tượng Random để tạo số ngẫu nhiên
+            Random random = new Random();
+            // Tạo mã hợp đồng
+            int maHoaDon = random.Next(1000, 10000);
+            xuat.Id = maHoaDon;
+
             try
             {
                 MySqlConnection conn = SqlConnectionData.Connect();
                 conn.Open();
-                string query = $"insert into billexport values(NULL,'{xuat.staffId}',1,'{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}','{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}',{xuat.Total},'{xuat.CustomerPhone}')";
+                string query = $"insert into billexport values('{xuat.Id}','{xuat.staffId}',1,'{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}','{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}',{xuat.Total},'{xuat.CustomerPhone}')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
 
@@ -59,7 +65,7 @@ namespace DAL
             MySqlCommand cmd2 = new MySqlCommand($"select total from customer where phoneNumber like '{xuat.CustomerPhone}'", conn);
             MySqlDataReader reader = cmd2.ExecuteReader();
 
-            int total = 0;
+            int total=0;
 
             while (reader.Read())
             {
@@ -97,7 +103,7 @@ namespace DAL
 
             return kh;
         }
-
+        /*
         public static void AddDetailMaintain(string customerPhone, List<spcbhDTO> list, List<int> productIds)
         {
             DateTime createdAt = DateTime.Now;
@@ -153,7 +159,7 @@ namespace DAL
             conn.Close();
 
         }
-
+        
         static int FindTime(int parentId, List<BaoHanhDTO> baohanhs)
         {
             foreach(BaoHanhDTO baohanh in baohanhs)
@@ -165,7 +171,7 @@ namespace DAL
             }
             return 0;
         }
-
+        */
         public static void AddDetailBill(int billId, List<spcbhDTO> list)
         {
             try

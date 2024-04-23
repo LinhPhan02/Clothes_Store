@@ -10,15 +10,15 @@ namespace DTO
     {
         public string Username { get; set; }
 
-        public string Type { get; set; }
+        public string Name { get; set; }
         public string Password { get; set; }
         public string id { get; set; }
-        public LoginDTO(string username, string password, string type, string id)
+        public LoginDTO(string username, string password, string id, string name)
         {
             Username = username;
             Password = password;
-            Type = type;
             this.id = id;
+            this.Name = name;
         }
     }
 }

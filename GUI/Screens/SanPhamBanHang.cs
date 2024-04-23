@@ -35,7 +35,7 @@ namespace GUI.Screens
         public SanPhamBanHang()
         {
             InitializeComponent();
-            //loadDataToDataSPBH(productCtl);
+            loadDataToDataSPBH(productCtl);
         }
 
         public void resetData()
@@ -44,7 +44,7 @@ namespace GUI.Screens
 
             loadDataToDataSPBH(productCtl);
         }
-        public void loadDataToDataSPBH(List<SpQLSPDTO> productCtl)  //Trước khi sửa là private
+        private void loadDataToDataSPBH(List<SpQLSPDTO> productCtl)
         {
             panelForm.Controls.Clear();
             panelForm.Refresh();
@@ -58,7 +58,7 @@ namespace GUI.Screens
             producer = new Label[productCtl.Count];
             button = new Button[productCtl.Count];
             Font SmallFont = new Font("Arial", 11);
-           // ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
 
 
             for (int i = 0; i < productCtl.Count; i++)
@@ -128,7 +128,7 @@ namespace GUI.Screens
                 button[i].Name = id[i].Text;
                 button[i].Click += HandleShowChild;
 
-                /*
+                
                 if (Login._checkUrlMatch("chonsanphammua:BH"))
                 {
                     button[i].Visible = true;
@@ -137,7 +137,7 @@ namespace GUI.Screens
                 {
                     button[i].Visible = false;
                 }
-                */
+                
                 pnlProduct[i].Controls.Add(id[i]);
                 pnlProduct[i].Controls.Add(name[i]);
                 pnlProduct[i].Controls.Add(type[i]);

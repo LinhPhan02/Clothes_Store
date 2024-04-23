@@ -10,7 +10,7 @@ namespace BLL
 {
     public class ThongKeBLL
     {
-        public static string tongDoanhThu, tienNhap, tienXuat,check;
+        public static int tongDoanhThu, tienNhap, tienXuat,check;
         public static void _getDataGia(string dayStart, string dayEnd)
         {
             ThongKeDAL._getDataGia(dayStart, dayEnd);

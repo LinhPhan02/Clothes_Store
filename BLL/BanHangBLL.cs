@@ -29,10 +29,11 @@ namespace BLL
         {
              BanHangDAL.AddDetailBill(billId, list);
         }
-
+        /*
         public static void AddDetailMaintain(string customerPhone, List<spcbhDTO> list, List<int> productIds)
         {
             BanHangDAL.AddDetailMaintain(customerPhone, list, productIds);
         }
+        */
     }
 }
