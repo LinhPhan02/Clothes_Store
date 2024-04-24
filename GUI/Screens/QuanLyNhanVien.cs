@@ -21,7 +21,7 @@ namespace GUI.Screens
         {
             InitializeComponent();
             btnAdd_NV.Visible = true;
-            /*
+            
             if (Login._checkUrlMatch("themnhanvien:QLNV"))
             {
                 btnAdd_NV.Visible = true;
@@ -30,7 +30,7 @@ namespace GUI.Screens
             {
                 btnAdd_NV.Visible = false;
             }
-            */
+            
         }
 
         private void btnAdd_NV_Click(object sender, EventArgs e)

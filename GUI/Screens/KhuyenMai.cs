@@ -21,6 +21,15 @@ namespace GUI.Screens
         {
             InitializeComponent();
             btnAdd_KM.Visible = true;
+
+            if (Login._checkUrlMatch("themkhuyenmai:KM"))
+            {
+                btnAdd_KM.Visible = true;
+            }
+            else
+            {
+                btnAdd_KM.Visible = false;
+            }
         }
 
         private void KhuyenMai_Load(object sender, EventArgs e)

@@ -11,9 +11,9 @@ namespace DTO
         public string id { get; set; }
         public string name { get; set; }
         public string prices { get; set; }  
-        public string quantity { get; set; }
+        public int quantity { get; set; }
 
-        public ThongKeSanPhamDTO(string id, string name, string prices, string quantity)
+        public ThongKeSanPhamDTO(string id, string name, string prices, int quantity)
         {
             this.id = id;
             this.name = name;

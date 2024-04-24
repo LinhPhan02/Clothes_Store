@@ -21,7 +21,7 @@ namespace GUI.Screens
         {
             InitializeComponent();
             initDatagridView();
-            /*
+            
             if (Login._checkUrlMatch("themnhacungcap:QLNCC"))
             {
                 btn_add_ncc.Visible = true;
@@ -30,7 +30,7 @@ namespace GUI.Screens
             {
                 btn_add_ncc.Visible = false;
             }
-            */
+            
             txt_search_ncc.GotFocus += RemoveText;
             txt_search_ncc.LostFocus += AddText;
         }

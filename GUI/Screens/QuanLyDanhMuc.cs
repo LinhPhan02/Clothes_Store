@@ -19,7 +19,7 @@ namespace GUI.Screens
         public QuanLyDanhMuc()
         {
             InitializeComponent();
-            /*
+            
             if (Login._checkUrlMatch("themdanhmucsanpham:QLDM"))
             {
                 btn_add.Visible = true;
@@ -28,7 +28,7 @@ namespace GUI.Screens
             {
                 btn_add.Visible = false;
             }
-            */
+            
             loadData();
             txt_search.LostFocus += addText;
             txt_search.GotFocus += removeText;
