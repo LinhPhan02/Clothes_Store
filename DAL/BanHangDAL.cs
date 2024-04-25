@@ -94,7 +94,7 @@ namespace DAL
             while (reader.Read())
             {
                 kh.ToTal = reader.GetInt32("total");
-                kh.Name = reader.GetString("Name");
+                kh.Name = reader.GetString("name");
                 kh.Phone = reader.GetString("phoneNumber");
             }
 

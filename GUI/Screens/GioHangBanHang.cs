@@ -116,14 +116,16 @@ namespace GUI.Screens
             }
             label8.Text = Total(SanPhamBanHang.cartbh).ToString();
         }
-
+        string PhoneNumber;
+        string Name;
         private void button2_Click(object sender, EventArgs e)
         {
             if (Login._checkUrlMatch("thanhtoangiohang:BH"))
             {
                 if (SanPhamBanHang.cartbh.Count > 0)
                 {
-                    string PhoneNumber = "";
+                    PhoneNumber = "";
+                    Name = "";
                     var DialogResult = MessageBox.Show("Khách hàng đã có tài khoản chưa?", "Xác nhận", MessageBoxButtons.YesNo);
                     if (DialogResult == DialogResult.Yes) //Creates the yes function
                     {
@@ -132,10 +134,10 @@ namespace GUI.Screens
                         if (hastk.kh != null)
                         {
                             PhoneNumber = hastk.kh.Phone;
+                            Name = hastk.kh.Name;
                             if (hastk.flag == true)
                             {
-
-                                HandlePayment(PhoneNumber);
+                                HandlePayment(PhoneNumber, Name);
                             }
                         }
 
@@ -149,7 +151,7 @@ namespace GUI.Screens
                         {
                             if (confirm.flag == true)
                             {
-                                HandlePayment(confirm.kh.Phone);
+                                HandlePayment(confirm.kh.Phone, confirm.kh.Name);
                             }
                         }
                     }
@@ -164,20 +166,27 @@ namespace GUI.Screens
         }
 
 
-        void HandlePayment(string phone)
+        void HandlePayment(string phone, string name)
         {
             PhieuXuatDTO xuatInput = new PhieuXuatDTO();
             xuatInput.staffId = Login.user.Username;
             xuatInput.CustomerPhone = phone;
+            xuatInput.CustomerName = name;
             xuatInput.Total = Total(SanPhamBanHang.cartbh);
+            Console.WriteLine(xuatInput.Total);
 
             PhieuXuatDTO xuat;
             xuat = BanHangBLL.AddBill(xuatInput);
+            xuat.Id = xuatInput.Id;
+            xuat.staffId = xuatInput.staffId;
+            xuat.CustomerPhone = xuatInput.CustomerPhone;
+            xuat.CustomerName = xuatInput.CustomerName;
+            xuat.Total = xuatInput.Total;
+            xuat.CreatedAt = xuatInput.CreatedAt;
             BanHangBLL.UpdateTotalCustomer(xuat);
-
-
+            
             BanHangBLL.AddDetailBill(xuat.Id, SanPhamBanHang.cartbh);
-
+            /*
             List<int> productIds = new List<int>();
 
             foreach(spcbhDTO spc in SanPhamBanHang.cartbh)
@@ -196,14 +205,14 @@ namespace GUI.Screens
                     productIds.Add(spc.ParentId);
                 }
             }
-
+            */
 
             //BanHangBLL.AddDetailMaintain(xuat.CustomerPhone, SanPhamBanHang.cartbh, productIds);
 
             MessageBox.Show("Thanh toán thành công");
 
             HoaDonBanHang hoadon = new HoaDonBanHang(xuat);
-                hoadon.ShowDialog();
+            hoadon.ShowDialog();
             SanPhamBanHang.cartbh.Clear();
             SanPhamBanHang.cart.Clear();
             loadDataToProductNCC(SanPhamBanHang.cartbh);
@@ -227,31 +236,6 @@ namespace GUI.Screens
                 }
             }
             return sum;
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GioHangBanHang_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void GioHangBanHang_Paint(object sender, PaintEventArgs e)
-        {
-          
         }
 
         public void resetData()
@@ -292,20 +276,7 @@ namespace GUI.Screens
                 }
             }
         }
-        private void GioHangBanHang_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         string maKH;
         private void btn_confirmKM_Click(object sender, EventArgs e)
         {
