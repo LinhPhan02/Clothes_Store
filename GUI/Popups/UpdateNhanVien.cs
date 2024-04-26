@@ -102,7 +102,7 @@ namespace GUI.Popups
                 {
                     MessageBox.Show("Cập nhật thành công!");
                 }
-                Clear();
+                Close();
             }
         }
 

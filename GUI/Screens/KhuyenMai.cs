@@ -31,10 +31,26 @@ namespace GUI.Screens
                 btnAdd_KM.Visible = false;
             }
         }
-
+        DataGridViewButtonColumn btn2;
         private void KhuyenMai_Load(object sender, EventArgs e)
         {
             dataGridView_KM.DataSource = KmBLL.Display();
+
+            btn2 = new DataGridViewButtonColumn();
+            btn2.Name = "colDelete";
+            btn2.Text = "Xoá";
+            btn2.HeaderText = "";
+            btn2.UseColumnTextForButtonValue = true;
+            dataGridView_KM.Columns.Add(btn2);
+
+            if (Login._checkUrlMatch("xoakhuyenmai:KM"))
+            {
+                btn2.Visible = true;
+            }
+            else
+            {
+                btn2.Visible = false;
+            }
         }
 
         private void btnSearch_KM_Click(object sender, EventArgs e)

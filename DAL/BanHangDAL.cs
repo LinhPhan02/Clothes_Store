@@ -172,7 +172,7 @@ namespace DAL
             return 0;
         }
         */
-        public static void AddDetailBill(int billId, List<spcbhDTO> list)
+        public static void AddDetailBill(PhieuXuatDTO xuat, List<spcbhDTO> list)
         {
             try
             {
@@ -184,7 +184,7 @@ namespace DAL
 
                 for (int i = 0; i < list.Count; i++)
                 {
-                    query += $"({billId},{list[i].Id},{list[i].Prices},1,'{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}','{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}')";
+                    query += $"({xuat.Id},{list[i].Id},{list[i].Prices},1,'{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}','{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}')";
                     queryUpdateChild += list[i].Id;
                     if (i < list.Count - 1)
                     {

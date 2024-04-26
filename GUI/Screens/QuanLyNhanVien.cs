@@ -20,7 +20,6 @@ namespace GUI.Screens
         public QuanLyNhanVien()
         {
             InitializeComponent();
-            btnAdd_NV.Visible = true;
             
             if (Login._checkUrlMatch("themnhanvien:QLNV"))
             {

@@ -33,8 +33,17 @@ namespace GUI.Screens
 
         private void button3_Click(object sender, EventArgs e)
         {
-            gioHangQLSP1.BringToFront();
-            gioHangQLSP1.resetData();
+            if (Login._checkUrlMatch("thanhtoangiohang:QLSP"))
+            {
+                button3.Visible = true;
+                gioHangQLSP1.BringToFront();
+                gioHangQLSP1.resetData();
+            }
+            else
+            {
+                button3.Visible = false;
+            }
+            
         }
 
         private void QuanLySanPham_Load(object sender, EventArgs e)

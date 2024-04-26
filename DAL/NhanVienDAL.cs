@@ -128,16 +128,15 @@ namespace DAL
                 conn.Close();   //Đóng kết nối
             }
         }
-
+        
         public List<NhanVienDTO> Search(string text)
         {
-            text = text.ToLower();
             try 
             { 
                 foreach (NhanVienDTO nv in dsnv)
                 {
                     conn.Open();
-                    string query = "SELECT * FROM staffs WHERE name LIKE '" + text + "' OR phoneNumber LIKE '" + text + "'";
+                    string query = "SELECT * FROM staffs WHERE name LIKE '" + text.ToLower() + "' OR phoneNumber LIKE '" + text + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataReader read = cmd.ExecuteReader();
                     found = new List<NhanVienDTO>();

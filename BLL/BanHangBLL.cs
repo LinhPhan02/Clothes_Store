@@ -25,9 +25,9 @@ namespace BLL
             return BanHangDAL.AddBill(xuat);
         }
 
-        public static void AddDetailBill(int billId, List<spcbhDTO> list)
+        public static void AddDetailBill(PhieuXuatDTO xuat, List<spcbhDTO> list)
         {
-             BanHangDAL.AddDetailBill(billId, list);
+             BanHangDAL.AddDetailBill(xuat, list);
         }
         /*
         public static void AddDetailMaintain(string customerPhone, List<spcbhDTO> list, List<int> productIds)

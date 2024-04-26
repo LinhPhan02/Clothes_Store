@@ -182,33 +182,34 @@ namespace GUI.Screens
 
         private void HandleSearch()
         {
+            
+        }
+
+        private void btn_search_ncc_Click(object sender, EventArgs e)
+        {
             searchProducers.Clear();
             if (txt_search_ncc.Text.Trim() == "" || txt_search_ncc.Text.Trim() == "Tìm kiếm theo ID, tên, sdt...")
             {
                 loadDataToDataGridView(producers);
                 return;
             }
+            List<NhaCungCapDTO> list_search = new List<NhaCungCapDTO>();
             foreach (NhaCungCapDTO producer in producers)
             {
-                if (producer.Id.ToString() == txt_search_ncc.Text)
+                if (txt_search_ncc.Text == producer.Id.ToString())
                 {
-                    searchProducers.Add(producer);
+                    list_search.Add(producer);
                 }
-                else if (producer.Name.ToUpper().IndexOf(txt_search_ncc.Text.ToUpper()) != -1)
+                else if (producer.Name.ToLower().Contains(this.txt_search_ncc.Text.ToLower()))
                 {
-                    searchProducers.Add(producer);
+                    list_search.Add(producer);
                 }
-                else if (producer.PhoneNumber.IndexOf(txt_search_ncc.Text) != -1)
+                else if (txt_search_ncc.Text == producer.PhoneNumber)
                 {
-                    searchProducers.Add(producer);
+                    list_search.Add(producer);
                 }
             }
-            loadDataToDataGridView(searchProducers);
-        }
-
-        private void btn_search_ncc_Click(object sender, EventArgs e)
-        {
-            HandleSearch();
+            loadDataToDataGridView(list_search);
         }
 
         private void txt_search_ncc_KeyDown(object sender, KeyEventArgs e)

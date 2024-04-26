@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using DTO;
 using MySql.Data.MySqlClient;
@@ -152,32 +153,42 @@ namespace DAL
 
         public static bool AddData(int id, string name)
         {
+            MySqlConnection conn = SqlConnectionData.Connect();
+            conn.Open();
             try
             {
-                MySqlConnection conn = SqlConnectionData.Connect();
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"INSERT INTO  categorystaffs VALUE({id},'{name}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','1')", conn);
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO categorystaffs VALUE({id},'{name}','{DateTime.Now.ToString("yyyy-MM-dd")}','{DateTime.Now.ToString("yyyy-MM-dd")}','1')", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (MySqlException error)
             {
+                MessageBox.Show("Error: " + error);    //Hiển thị lỗi nếu có
                 return false;
+            }
+            finally
+            {
+                conn.Close();   //Đóng kết nối
             }
         }
         public static bool UpdateData(int id, string name)
         {
+            MySqlConnection conn = SqlConnectionData.Connect();
+            conn.Open();
             try
             {
-                MySqlConnection conn = SqlConnectionData.Connect();
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"UPDATE `categorystaffs` SET `name`='{name}',`updateAt`='{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}' WHERE id={id}", conn);
+                MySqlCommand cmd = new MySqlCommand($"UPDATE `categorystaffs` SET `name`='{name}',`updateAt`='{DateTime.Now.ToString("yyyy-MM-dd")}' WHERE id={id}", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (MySqlException error)
             {
+                MessageBox.Show("Error: " + error);    //Hiển thị lỗi nếu có
                 return false;
+            }
+            finally
+            {
+                conn.Close();   //Đóng kết nối
             }
         }
         public static bool DeleteData(int id)

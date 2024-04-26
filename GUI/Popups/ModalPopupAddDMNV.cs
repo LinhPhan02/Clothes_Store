@@ -18,7 +18,7 @@ namespace GUI.Popups
     {
         public Label lbl_IDDMNV, lbl_TenDMNV;
         public TextBox txt_IDDMNV, txt_TenDMNV;
-        public Button btn_OK, btn_reset;
+        public Button btn_reset;
         public FlowLayoutPanel pnl, pnl1, pnl2;
         public Panel pnl_footer;
         public int id;
@@ -98,7 +98,7 @@ namespace GUI.Popups
 
             //*****************************************
 
-            btn_OK = new Button()
+            Button btn_OK = new Button()
             {
                 Text = "Thêm",
                 Font = new Font("Times New Roman", 12.0f, FontStyle.Bold),
@@ -133,18 +133,11 @@ namespace GUI.Popups
             }
             else
             {
-                if (PhanQuyenBLL.AddData(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text) == false)
-                {
-                    MessageBox.Show("Thêm thất bại!!!", "Thông báo");
-                }
-                else
-                {
-                    PhanQuyenBLL.AddData(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text);
-                    pqdto = new PhanQuyenDTO(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text, DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff"), DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff"), "1");
-                    flagaddDMNV = true;
-                    MessageBox.Show("Thêm thành công!!!", "Thông báo");
-                    this.Hide();
-                }
+                PhanQuyenBLL.AddData(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text);
+                pqdto = new PhanQuyenDTO(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text, DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd"), "1");
+                flagaddDMNV = true;
+                MessageBox.Show("Thêm thành công!!!", "Thông báo");
+                this.Hide();
             }
         }
 

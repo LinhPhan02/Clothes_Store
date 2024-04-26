@@ -185,7 +185,7 @@ namespace GUI.Screens
             xuat.CreatedAt = xuatInput.CreatedAt;
             BanHangBLL.UpdateTotalCustomer(xuat);
             
-            BanHangBLL.AddDetailBill(xuat.Id, SanPhamBanHang.cartbh);
+            BanHangBLL.AddDetailBill(xuat, SanPhamBanHang.cartbh);
             /*
             List<int> productIds = new List<int>();
 
@@ -215,6 +215,7 @@ namespace GUI.Screens
             hoadon.ShowDialog();
             SanPhamBanHang.cartbh.Clear();
             SanPhamBanHang.cart.Clear();
+            txt_nhapKM.Clear();
             loadDataToProductNCC(SanPhamBanHang.cartbh);
 
         }

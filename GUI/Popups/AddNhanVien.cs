@@ -91,7 +91,7 @@ namespace GUI.Popups
                 {
                     MessageBox.Show("Thêm thành công!");
                 }
-                Clear();
+                Close();
             }
         }
 

@@ -39,16 +39,6 @@ namespace GUI.Screens
         public GioHangQLSP()
         {
             InitializeComponent();
-            
-            if (Login._checkUrlMatch("thanhtoangiohang:QLSP"))
-            {
-                button2.Visible = true;
-            }
-            else
-            {
-                button2.Visible = false;
-            }
-            
             loadDataToCart(NhapHangQLSP.cart);
         }
         public void loadDataToCart(List<spnccDTO> carts)

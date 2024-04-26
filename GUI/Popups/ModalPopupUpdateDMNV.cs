@@ -171,7 +171,7 @@ namespace GUI.Popups
                     else
                     {
                         PhanQuyenBLL.DeleteData(int.Parse(txt_IDDMNV.Text));
-                        pqdto = new PhanQuyenDTO(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text, createAtdmnv, DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff"), "0");
+                        pqdto = new PhanQuyenDTO(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text, createAtdmnv, DateTime.Now.ToString("yyyy-MM-dd"), "0");
                         flagdelete = true;
                         MessageBox.Show("Xóa thành công!!!", "Thông báo");
                         this.Hide();
@@ -190,14 +190,14 @@ namespace GUI.Popups
             {
                 if (PhanQuyenBLL.UpdateData(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text) == false)
                 {
-                    MessageBox.Show("Update thất bại!!!", "Thông báo");
+                    MessageBox.Show("Cập nhật thất bại!!!", "Thông báo");
                 }
                 else
                 {
                     PhanQuyenBLL.UpdateData(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text);
-                    pqdto = new PhanQuyenDTO(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text, createAtdmnv, DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff"), "1");
+                    pqdto = new PhanQuyenDTO(int.Parse(txt_IDDMNV.Text), txt_TenDMNV.Text, createAtdmnv, DateTime.Now.ToString("yyyy-MM-dd"), "1");
                     flagupdate = true;
-                    MessageBox.Show("Update thành công!!!", "Thông báo");
+                    MessageBox.Show("Cập nhật thành công!!!", "Thông báo");
                     this.Hide();
                 }
             }
