@@ -111,7 +111,7 @@ namespace DAL
                 {
                     if (nv.phone.Equals(index)) //Nếu số điện thoại bằng giá trị ô được chọn của cột "Số điện thoại" thì mới cập nhật lại status
                     {
-                        string query = "UPDATE staffs SET status = '" + nv.status + "' WHERE phoneNumber = '" + index + "'";
+                        string query = "UPDATE staffs SET status = 0 WHERE phoneNumber = '" + index + "'";
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                     }

@@ -54,12 +54,13 @@ namespace GUI.Popups
                 km.discount_amount = Int32.Parse(txtGiamGia.Text);
                 km.start_day = BatDauKM.Value.ToString("MM-dd-yyyy");
                 km.end_day = KetThucKM.Value.ToString("MM-dd-yyyy");
+                km.status = 1;
 
-                if (qlkmBLL.Insert(km.discount_id, km.discount_name, km.start_day, km.end_day, km.discount_amount))
+                if (qlkmBLL.Insert(km.discount_id, km.discount_name, km.start_day, km.end_day, km.discount_amount, km.status))
                 {
                     MessageBox.Show("Thêm thành công!");
                 }
-                Clear();
+                Close();
             }
         }
     }

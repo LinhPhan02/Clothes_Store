@@ -59,6 +59,7 @@
             this.btnAdd_HD.TabIndex = 27;
             this.btnAdd_HD.Text = "Thêm";
             this.btnAdd_HD.UseVisualStyleBackColor = false;
+            this.btnAdd_HD.Click += new System.EventHandler(this.btnAdd_HD_Click);
             // 
             // panel1
             // 

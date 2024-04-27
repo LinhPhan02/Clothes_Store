@@ -13,6 +13,7 @@ namespace DTO
         public string start_day;
         public string end_day;
         public int discount_amount;
+        public int status;
         public KhuyenMaiDTO()
         {
             discount_id = null;
@@ -20,15 +21,17 @@ namespace DTO
             start_day = null;
             end_day = null;
             discount_amount = 0;
+            status = 1;
         }
 
-        public KhuyenMaiDTO(string discount_id, string discount_name, string start_day, string end_day, int discount_amount)
+        public KhuyenMaiDTO(string discount_id, string discount_name, string start_day, string end_day, int discount_amount, int status)
         {
             this.discount_id = discount_id;
             this.discount_name = discount_name;
             this.start_day = start_day;
             this.end_day = end_day;
             this.discount_amount = discount_amount;
+            this.status = status;
         }
 
         public string getDiscount_id { get => discount_id; set => discount_id = value; }

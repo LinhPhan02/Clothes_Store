@@ -70,5 +70,21 @@ namespace GUI.Screens
         {
             new AddKhuyenMai().Show();
         }
+
+        private void dataGridView_KM_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colname = dataGridView_KM.Columns[e.ColumnIndex].Name;
+            if (colname == "colDelete")
+            {
+                DsKM = KmBLL.readDB();
+                if (MessageBox.Show("Bạn có thật sự muốn xóa?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    string index = dataGridView_KM.Rows[e.RowIndex].Cells["Mã khuyến mãi"].Value.ToString();
+                    KmBLL.Delete(index);
+                    dataGridView_KM.Rows.RemoveAt(e.RowIndex); //Xoá trực tiếp trên DataGridView nhưng ko xoá trong CSDL
+                    MessageBox.Show("Đã xoá thành công!");
+                }
+            }
+        }
     }
 }

@@ -41,10 +41,10 @@
             // txtFind_KM
             // 
             this.txtFind_KM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFind_KM.Location = new System.Drawing.Point(27, 77);
-            this.txtFind_KM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFind_KM.Location = new System.Drawing.Point(24, 62);
+            this.txtFind_KM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFind_KM.Name = "txtFind_KM";
-            this.txtFind_KM.Size = new System.Drawing.Size(365, 28);
+            this.txtFind_KM.Size = new System.Drawing.Size(325, 24);
             this.txtFind_KM.TabIndex = 13;
             // 
             // dataGridView_KM
@@ -57,16 +57,17 @@
             this.dataGridView_KM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_KM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_KM.GridColor = System.Drawing.Color.White;
-            this.dataGridView_KM.Location = new System.Drawing.Point(27, 165);
-            this.dataGridView_KM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_KM.Location = new System.Drawing.Point(24, 132);
+            this.dataGridView_KM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView_KM.MultiSelect = false;
             this.dataGridView_KM.Name = "dataGridView_KM";
             this.dataGridView_KM.RowHeadersVisible = false;
             this.dataGridView_KM.RowHeadersWidth = 51;
             this.dataGridView_KM.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView_KM.ShowEditingIcon = false;
-            this.dataGridView_KM.Size = new System.Drawing.Size(1088, 688);
+            this.dataGridView_KM.Size = new System.Drawing.Size(967, 550);
             this.dataGridView_KM.TabIndex = 17;
+            this.dataGridView_KM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_KM_CellClick);
             // 
             // btnReload_KM
             // 
@@ -74,10 +75,10 @@
             this.btnReload_KM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReload_KM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnReload_KM.Image = global::GUI.Properties.Resources.icons8_refresh_30;
-            this.btnReload_KM.Location = new System.Drawing.Point(454, 77);
-            this.btnReload_KM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReload_KM.Location = new System.Drawing.Point(404, 62);
+            this.btnReload_KM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReload_KM.Name = "btnReload_KM";
-            this.btnReload_KM.Size = new System.Drawing.Size(42, 31);
+            this.btnReload_KM.Size = new System.Drawing.Size(38, 25);
             this.btnReload_KM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnReload_KM.TabIndex = 16;
             this.btnReload_KM.TabStop = false;
@@ -89,10 +90,10 @@
             this.btnSearch_KM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSearch_KM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnSearch_KM.Image = global::GUI.Properties.Resources.icons8_search_30;
-            this.btnSearch_KM.Location = new System.Drawing.Point(393, 77);
-            this.btnSearch_KM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearch_KM.Location = new System.Drawing.Point(349, 62);
+            this.btnSearch_KM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch_KM.Name = "btnSearch_KM";
-            this.btnSearch_KM.Size = new System.Drawing.Size(42, 31);
+            this.btnSearch_KM.Size = new System.Drawing.Size(38, 25);
             this.btnSearch_KM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSearch_KM.TabIndex = 15;
             this.btnSearch_KM.TabStop = false;
@@ -106,25 +107,26 @@
             this.btnAdd_KM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd_KM.ForeColor = System.Drawing.Color.White;
             this.btnAdd_KM.Image = global::GUI.Properties.Resources.icons8_add_30;
-            this.btnAdd_KM.Location = new System.Drawing.Point(986, 66);
-            this.btnAdd_KM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd_KM.Location = new System.Drawing.Point(876, 53);
+            this.btnAdd_KM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd_KM.Name = "btnAdd_KM";
-            this.btnAdd_KM.Size = new System.Drawing.Size(129, 52);
+            this.btnAdd_KM.Size = new System.Drawing.Size(115, 42);
             this.btnAdd_KM.TabIndex = 14;
             this.btnAdd_KM.UseVisualStyleBackColor = false;
             this.btnAdd_KM.Click += new System.EventHandler(this.btnAdd_KM_Click);
             // 
             // KhuyenMai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView_KM);
             this.Controls.Add(this.btnReload_KM);
             this.Controls.Add(this.txtFind_KM);
             this.Controls.Add(this.btnSearch_KM);
             this.Controls.Add(this.btnAdd_KM);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "KhuyenMai";
-            this.Size = new System.Drawing.Size(1142, 894);
+            this.Size = new System.Drawing.Size(1015, 715);
             this.Load += new System.EventHandler(this.KhuyenMai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReload_KM)).EndInit();
