@@ -30,12 +30,12 @@ namespace DAL
             return data;
         }
         public static bool _AddPermission(string idDanhMucNhanVien, string idQuyen)
-        {
+        { 
             try
             {
                 MySqlConnection conn = SqlConnectionData.Connect();
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"INSERT INTO `privilege_detail`(`CategoryStaffs_id`, `url_match_privilege_id`, `updatedAt`) VALUES ('{idDanhMucNhanVien}','{idQuyen}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}')", conn);
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO privilege_detail (CategoryStaffs_id, url_match_privilege_id, updateAt) VALUES ('{idDanhMucNhanVien}','{idQuyen}','{DateTime.Now.ToString("yyyy-MM-dd")}')", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }

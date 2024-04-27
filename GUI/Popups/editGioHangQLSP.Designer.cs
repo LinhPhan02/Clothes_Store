@@ -44,10 +44,10 @@
             // 
             // txt_id
             // 
-            this.txt_id.Location = new System.Drawing.Point(287, 18);
+            this.txt_id.Location = new System.Drawing.Point(255, 14);
             this.txt_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(320, 26);
+            this.txt_id.Size = new System.Drawing.Size(285, 22);
             this.txt_id.TabIndex = 1;
             // 
             // panel1
@@ -61,34 +61,35 @@
             this.panel1.Controls.Add(this.txt_name);
             this.panel1.Controls.Add(this.txt_id);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(16, 15);
+            this.panel1.Location = new System.Drawing.Point(14, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(631, 349);
+            this.panel1.Size = new System.Drawing.Size(561, 279);
             this.panel1.TabIndex = 3;
             // 
             // txt_quantity
             // 
-            this.txt_quantity.Location = new System.Drawing.Point(287, 229);
+            this.txt_quantity.Location = new System.Drawing.Point(255, 183);
             this.txt_quantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_quantity.Name = "txt_quantity";
-            this.txt_quantity.Size = new System.Drawing.Size(320, 26);
+            this.txt_quantity.Size = new System.Drawing.Size(285, 22);
             this.txt_quantity.TabIndex = 11;
             // 
             // cbb_type
             // 
             this.cbb_type.FormattingEnabled = true;
-            this.cbb_type.Location = new System.Drawing.Point(287, 125);
+            this.cbb_type.Location = new System.Drawing.Point(255, 100);
+            this.cbb_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbb_type.Name = "cbb_type";
-            this.cbb_type.Size = new System.Drawing.Size(320, 28);
+            this.cbb_type.Size = new System.Drawing.Size(285, 24);
             this.cbb_type.TabIndex = 10;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(461, 281);
+            this.button2.Location = new System.Drawing.Point(410, 225);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 50);
+            this.button2.Size = new System.Drawing.Size(130, 40);
             this.button2.TabIndex = 8;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
@@ -96,54 +97,56 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 281);
+            this.button1.Location = new System.Drawing.Point(17, 225);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 50);
+            this.button1.Size = new System.Drawing.Size(130, 40);
             this.button1.TabIndex = 7;
             this.button1.Text = "Đóng";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // txt_origin
             // 
-            this.txt_origin.Location = new System.Drawing.Point(19, 229);
+            this.txt_origin.Location = new System.Drawing.Point(17, 183);
             this.txt_origin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_origin.Name = "txt_origin";
-            this.txt_origin.Size = new System.Drawing.Size(246, 26);
+            this.txt_origin.Size = new System.Drawing.Size(219, 22);
             this.txt_origin.TabIndex = 6;
             // 
             // txt_price
             // 
-            this.txt_price.Location = new System.Drawing.Point(287, 176);
+            this.txt_price.Location = new System.Drawing.Point(255, 141);
             this.txt_price.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_price.Name = "txt_price";
-            this.txt_price.Size = new System.Drawing.Size(320, 26);
+            this.txt_price.Size = new System.Drawing.Size(285, 22);
             this.txt_price.TabIndex = 4;
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(287, 70);
+            this.txt_name.Location = new System.Drawing.Point(255, 56);
             this.txt_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(320, 26);
+            this.txt_name.Size = new System.Drawing.Size(285, 22);
             this.txt_name.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(19, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 185);
+            this.pictureBox1.Size = new System.Drawing.Size(219, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // editGioHangQLSP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 379);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ClientSize = new System.Drawing.Size(589, 303);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "editGioHangQLSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "editGioHangQLSP";

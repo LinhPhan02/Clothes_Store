@@ -115,7 +115,7 @@ namespace GUI.Screens
                 name[i].Margin = new Padding(2, 0, 2, 0);
                 name[i].Location = new Point(74, 9);
                 name[i].TextAlign = ContentAlignment.MiddleLeft;
-                /*
+                
                 type[i] = new Label();
                 type[i].Size = new Size(100, 20);
                 type[i].Font = SmallFont;
@@ -124,7 +124,7 @@ namespace GUI.Screens
                 type[i].Text = productCtl[i].Type.ToString();
                 type[i].Location = new Point(160, 22);
                 type[i].TextAlign = ContentAlignment.MiddleCenter;
-                */
+                
                 img[i] = new PictureBox();
                 img[i].Location = new Point(260, 10);
                 img[i].Size = new Size(70, 45);
@@ -170,7 +170,7 @@ namespace GUI.Screens
                 
                 pnlProduct[i].Controls.Add(id[i]);
                 pnlProduct[i].Controls.Add(name[i]);
-                pnlProduct[i].Controls.Add(type[i]);
+                //pnlProduct[i].Controls.Add(type[i]);
                 pnlProduct[i].Controls.Add(img[i]);
                 pnlProduct[i].Controls.Add(price[i]);
                 pnlProduct[i].Controls.Add(origin[i]);

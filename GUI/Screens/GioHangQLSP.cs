@@ -187,6 +187,26 @@ namespace GUI.Screens
 
 
                 }
+                NhapDTO nhap = new NhapDTO();
+                nhap.total = Total(NhapHangQLSP.cart);
+                nhap.staff_id = Login.user.Username;
+                nhap.producer_id = NhapHangQLSP.cart[0].Producer;
+
+                NhapDTO bill = new NhapDTO();
+
+                bill = spnccBLL.AddBill(nhap);
+
+                spnccBLL.AddDetailBill(bill.id, NhapHangQLSP.cart);
+
+
+                MessageBox.Show("Thanh toán thành công");
+                HoaDonNhapHang billImport = new HoaDonNhapHang(bill);
+                billImport.ShowDialog();
+
+                NhapHangQLSP.cart.Clear();
+                panel1.Controls.Clear();
+                label6.Text = Total(NhapHangQLSP.cart).ToString();
+                /*
                 bool flag = spnccBLL.AddDataSPC(listProductChild);
                 if (flag)
                 {
@@ -212,6 +232,7 @@ namespace GUI.Screens
 
 
                 }
+                */
             }
 
            
