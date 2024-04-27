@@ -16,7 +16,7 @@ namespace DAL
     {
         public static MySqlConnection Connect()
         {
-            string strCon = "datasource=127.0.0.1;port=3306;username=root;password=;database=watchmanage_temp;Convert Zero Datetime=true";
+            string strCon = "datasource=127.0.0.1;port=3306;username=root;password=;database=clothes_store;Convert Zero Datetime=true";
             MySqlConnection conn = new MySqlConnection(strCon);
             return conn;
         }
