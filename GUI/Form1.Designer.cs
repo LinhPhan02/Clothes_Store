@@ -63,7 +63,6 @@ namespace GUI
             this.quanLyKhachHang1 = new GUI.Screens.QuanLyKhachHang();
             this.banHang1 = new GUI.Screens.BanHang();
             this.nhapXuat1 = new GUI.Screens.NhapXuat();
-            this.quanLyBaoHanh1 = new GUI.Screens.QuanLyBaoHanh();
             this.quanLyDanhMuc1 = new GUI.Screens.QuanLyDanhMuc();
             this.quanLyNhaCungCap1 = new GUI.Screens.QuanLyNhaCungCap();
             this.quanLySanPham1 = new GUI.Screens.QuanLySanPham();
@@ -387,23 +386,6 @@ namespace GUI
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
-            // btn_baohanh
-            // 
-            this.btn_baohanh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_baohanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_baohanh.ForeColor = System.Drawing.Color.White;
-            this.btn_baohanh.Image = ((System.Drawing.Image)(resources.GetObject("btn_baohanh.Image")));
-            this.btn_baohanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_baohanh.Location = new System.Drawing.Point(3, 790);
-            this.btn_baohanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_baohanh.Name = "btn_baohanh";
-            this.btn_baohanh.Size = new System.Drawing.Size(341, 69);
-            this.btn_baohanh.TabIndex = 19;
-            this.btn_baohanh.Text = "          Quản lý bảo hành";
-            this.btn_baohanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_baohanh.UseVisualStyleBackColor = false;
-            this.btn_baohanh.Click += new System.EventHandler(this.btn_baohanh_Click);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -414,7 +396,6 @@ namespace GUI
             this.panel4.Controls.Add(this.quanLyKhachHang1);
             this.panel4.Controls.Add(this.banHang1);
             this.panel4.Controls.Add(this.nhapXuat1);
-            this.panel4.Controls.Add(this.quanLyBaoHanh1);
             this.panel4.Controls.Add(this.quanLyDanhMuc1);
             this.panel4.Controls.Add(this.quanLyNhaCungCap1);
             this.panel4.Controls.Add(this.quanLySanPham1);
@@ -493,16 +474,6 @@ namespace GUI
             this.nhapXuat1.Size = new System.Drawing.Size(1015, 715);
             this.nhapXuat1.TabIndex = 6;
             this.nhapXuat1.Load += new System.EventHandler(this.nhapXuat1_Load);
-            // 
-            // quanLyBaoHanh1
-            // 
-            this.quanLyBaoHanh1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quanLyBaoHanh1.Location = new System.Drawing.Point(0, 0);
-            this.quanLyBaoHanh1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.quanLyBaoHanh1.Name = "quanLyBaoHanh1";
-            this.quanLyBaoHanh1.Size = new System.Drawing.Size(1015, 715);
-            this.quanLyBaoHanh1.TabIndex = 5;
-            this.quanLyBaoHanh1.Load += new System.EventHandler(this.quanLyBaoHanh1_Load);
             // 
             // quanLyDanhMuc1
             // 
@@ -629,7 +600,6 @@ namespace GUI
         private Screens.QuanLyKhachHang quanLyKhachHang1;
         private Screens.BanHang banHang1;
         private Screens.NhapXuat nhapXuat1;
-        private Screens.QuanLyBaoHanh quanLyBaoHanh1;
         private Screens.QuanLyDanhMuc quanLyDanhMuc1;
         private Screens.QuanLyNhaCungCap quanLyNhaCungCap1;
         private Screens.QuanLySanPham quanLySanPham1;

@@ -191,12 +191,6 @@ namespace GUI
             ActiveSideBar(btn_khachhang);
         }
 
-        private void btn_baohanh_Click(object sender, EventArgs e)
-        {
-            quanLyBaoHanh1.BringToFront();
-            ActiveSideBar(btn_baohanh);
-        }
-
         private void btn_nhapxuat_Click(object sender, EventArgs e)
         {
             nhapXuat1.BringToFront();

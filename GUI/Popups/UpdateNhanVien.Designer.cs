@@ -29,6 +29,7 @@ namespace GUI.Popups
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateNhanVien));
             this.cboType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,7 +59,7 @@ namespace GUI.Popups
             "Quản lý",
             "Nhân viên"});
             this.cboType.Location = new System.Drawing.Point(140, 233);
-            this.cboType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboType.Margin = new System.Windows.Forms.Padding(4);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(524, 24);
             this.cboType.TabIndex = 21;
@@ -90,7 +91,7 @@ namespace GUI.Popups
             this.panel1.Controls.Add(this.txtID);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(263, 22);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 191);
             this.panel1.TabIndex = 19;
@@ -128,7 +129,7 @@ namespace GUI.Popups
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(99, 59);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(303, 22);
             this.txtName.TabIndex = 4;
@@ -136,7 +137,7 @@ namespace GUI.Popups
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(99, 154);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(303, 22);
             this.txtPass.TabIndex = 3;
@@ -144,7 +145,7 @@ namespace GUI.Popups
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(99, 107);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(303, 22);
             this.txtPhone.TabIndex = 2;
@@ -153,7 +154,7 @@ namespace GUI.Popups
             // 
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(99, 12);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(303, 22);
             this.txtID.TabIndex = 1;
@@ -173,10 +174,13 @@ namespace GUI.Popups
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(31, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 191);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
@@ -189,7 +193,7 @@ namespace GUI.Popups
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(555, 299);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(111, 42);
             this.btnAdd.TabIndex = 17;
