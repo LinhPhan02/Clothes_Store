@@ -52,7 +52,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"INSERT INTO discount (discount_id, discount_name, start_day, end_day, discount_amount) VALUES ('{km.discount_id}', '{km.discount_name}', '{km.start_day}','{km.end_day}', '{km.discount_amount}')";
+                string query = $"INSERT INTO discount (discount_id, discount_name, start_day, end_day, discount_amount, status) VALUES ('{km.discount_id}', '{km.discount_name}', '{km.start_day}','{km.end_day}', '{km.discount_amount}', 1)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;

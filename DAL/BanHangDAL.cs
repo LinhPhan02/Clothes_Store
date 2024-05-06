@@ -196,7 +196,6 @@ namespace DAL
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
-
                 MySqlCommand cmd2 = new MySqlCommand($"update detailproduct set isActive = 0 where id in ({queryUpdateChild})", conn);
                 cmd2.ExecuteNonQuery();
 
