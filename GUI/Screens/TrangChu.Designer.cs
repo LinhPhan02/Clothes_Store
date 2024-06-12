@@ -64,7 +64,7 @@ namespace GUI.Screens
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(148, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(712, 416);
+            this.panel1.Size = new System.Drawing.Size(728, 416);
             this.panel1.TabIndex = 9;
             // 
             // TrangChu

@@ -37,7 +37,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                ThongKeSanPhamDTO tkspnDTO = new ThongKeSanPhamDTO(dr.GetString("id"), dr.GetString("name"), dr.GetString("prices"), dr.GetString("quantity"));
+                ThongKeSanPhamDTO tkspnDTO = new ThongKeSanPhamDTO(dr.GetString("id"), dr.GetString("name"), dr.GetString("prices"), dr.GetInt32("quantity"));
                 data.Add(tkspnDTO);
             }
             conn.Close();
@@ -52,7 +52,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                ThongKeSanPhamDTO tkspnDTO = new ThongKeSanPhamDTO(dr.GetString("product_id"), dr.GetString("name"), dr.GetString("prices"), dr.GetString("quantity"));
+                ThongKeSanPhamDTO tkspnDTO = new ThongKeSanPhamDTO(dr.GetString("product_id"), dr.GetString("name"), dr.GetString("prices"), dr.GetInt32("quantity"));
                 data.Add(tkspnDTO);
             }
             conn.Close();
@@ -67,7 +67,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                ThongKeNhanVienDTO tknvnDTO = new ThongKeNhanVienDTO(dr.GetString("id"), dr.GetString("name"), dr.GetString("soluongdonhang"));
+                ThongKeNhanVienDTO tknvnDTO = new ThongKeNhanVienDTO(dr.GetString("id"), dr.GetString("name"), dr.GetInt32("soluongdonhang"));
                 data.Add(tknvnDTO);
             }
             conn.Close();
@@ -82,7 +82,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                ThongKeNhanVienDTO tknvnDTO = new ThongKeNhanVienDTO(dr.GetString("id"), dr.GetString("name"), dr.GetString("soluongdonhang"));
+                ThongKeNhanVienDTO tknvnDTO = new ThongKeNhanVienDTO(dr.GetString("id"), dr.GetString("name"), dr.GetInt32("soluongdonhang"));
                 data.Add(tknvnDTO);
             }
             conn.Close();
@@ -97,7 +97,7 @@ namespace DAL
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                ThongKeKhachHangDTO tkkhnDTO = new ThongKeKhachHangDTO(dr.GetString("phone"), dr.GetString("name"), dr.GetString("soluongdonhang"), dr.GetString("total"));
+                ThongKeKhachHangDTO tkkhnDTO = new ThongKeKhachHangDTO(dr.GetString("phone"), dr.GetString("name"), dr.GetInt32("soluongdonhang"), dr.GetString("total"));
                 data.Add(tkkhnDTO);
             }
             conn.Close();

@@ -33,18 +33,32 @@ namespace BLL
             return KmDAL.Insert(discount);
         }
 
-        public bool Insert(string discount_id, string discount_name, string start_day, string end_day, int discount_amount) 
+        public bool Insert(string discount_id, string discount_name, string start_day, string end_day, int discount_amount, int status) 
         {
-            km = new KhuyenMaiDTO(discount_id, discount_name, start_day, end_day, discount_amount);
+            km = new KhuyenMaiDTO(discount_id, discount_name, start_day, end_day, discount_amount, status);
             return Insert(km);
+        }
+
+        public bool Delete(string index)
+        {
+            DsKM = readDB();
+            //Xoá nhân viên trong List
+            foreach (KhuyenMaiDTO km in DsKM)
+            {
+                if (km.discount_id.Equals(index))
+                {
+                    km.status = 0;
+                }
+            }
+            return KmDAL.Delete(index);
         }
 
         public DataTable Show(string text, string number)
         {
-            List<KhuyenMaiDTO> dskm = new List<KhuyenMaiDTO>();
-            dskm = KmDAL.Search(text, number);
+            DsKM = new List<KhuyenMaiDTO>();
+            DsKM = KmDAL.Search(text, number);
             //Tìm kiếm mã giảm 
-            return KmDAL.Show(dskm);
+            return KmDAL.Show(DsKM);
         }
 
         public static bool Insert(string textboxMaKM, string textboxGiamGia, DateTime dayBD, DateTime dayKT)

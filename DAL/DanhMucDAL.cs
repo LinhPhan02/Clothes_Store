@@ -42,7 +42,7 @@ namespace DAL
             {
                 MySqlConnection conn = SqlConnectionData.Connect();
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"insert into category values ('{cate.Id}','{1}','{cate.CreateAt.ToString("yyyy-MM-dd hh:mm:ss")}','{cate.UpdateAt.ToString("yyyy-MM-dd hh:mm:ss")}',N'{cate.Name}',0)", conn);
+                MySqlCommand cmd = new MySqlCommand($"insert into category values ('{cate.Id}',N'{cate.Name}','{cate.CreateAt.ToString("yyyy-MM-dd hh:mm:ss")}','{cate.UpdateAt.ToString("yyyy-MM-dd hh:mm:ss")}','{1}')", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }

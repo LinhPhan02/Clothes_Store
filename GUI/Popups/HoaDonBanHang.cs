@@ -93,5 +93,10 @@ namespace GUI.Popups
         {
             this.Hide();
         }
+
+        private void lbl_total_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

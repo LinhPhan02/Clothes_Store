@@ -180,12 +180,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popups\AddBaoHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popups\AddBaoHanh.Designer.cs">
-      <DependentUpon>AddBaoHanh.cs</DependentUpon>
-    </Compile>
     <Compile Include="Popups\AddDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,24 +282,6 @@
     <Compile Include="Popups\ModalPopupUpdateDMNV.Designer.cs">
       <DependentUpon>ModalPopupUpdateDMNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popups\UpdateBaoHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popups\UpdateBaoHanh.Designer.cs">
-      <DependentUpon>UpdateBaoHanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Popups\UpdateChiTietBaoHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popups\UpdateChiTietBaoHanh.Designer.cs">
-      <DependentUpon>UpdateChiTietBaoHanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Popups\UpdateCTBH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popups\UpdateCTBH.Designer.cs">
-      <DependentUpon>UpdateCTBH.cs</DependentUpon>
-    </Compile>
     <Compile Include="Popups\UpdateDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,18 +355,6 @@
     <Compile Include="Screens\BanHang.Designer.cs">
       <DependentUpon>BanHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\BaoHanhQLBH.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\BaoHanhQLBH.Designer.cs">
-      <DependentUpon>BaoHanhQLBH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\ChiTietBaoHanhQLBH.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\ChiTietBaoHanhQLBH.Designer.cs">
-      <DependentUpon>ChiTietBaoHanhQLBH.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\GioHangBanHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -432,12 +396,6 @@
     </Compile>
     <Compile Include="Screens\PhanQuyen.Designer.cs">
       <DependentUpon>PhanQuyen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\QuanLyBaoHanh.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\QuanLyBaoHanh.Designer.cs">
-      <DependentUpon>QuanLyBaoHanh.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\QuanLyDanhMuc.cs">
       <SubType>UserControl</SubType>
@@ -529,9 +487,6 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popups\AddBaoHanh.resx">
-      <DependentUpon>AddBaoHanh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddDanhMuc.resx">
       <DependentUpon>AddDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
@@ -583,15 +538,6 @@
     <EmbeddedResource Include="Popups\ShowChiTietPX.resx">
       <DependentUpon>ShowChiTietPX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popups\UpdateBaoHanh.resx">
-      <DependentUpon>UpdateBaoHanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Popups\UpdateChiTietBaoHanh.resx">
-      <DependentUpon>UpdateChiTietBaoHanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Popups\UpdateCTBH.resx">
-      <DependentUpon>UpdateCTBH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Popups\UpdateDanhMuc.resx">
       <DependentUpon>UpdateDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,12 +578,6 @@
     <EmbeddedResource Include="Screens\BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\BaoHanhQLBH.resx">
-      <DependentUpon>BaoHanhQLBH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\ChiTietBaoHanhQLBH.resx">
-      <DependentUpon>ChiTietBaoHanhQLBH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\GioHangBanHang.resx">
       <DependentUpon>GioHangBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -658,9 +598,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\PhanQuyen.resx">
       <DependentUpon>PhanQuyen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\QuanLyBaoHanh.resx">
-      <DependentUpon>QuanLyBaoHanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\QuanLyDanhMuc.resx">
       <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>

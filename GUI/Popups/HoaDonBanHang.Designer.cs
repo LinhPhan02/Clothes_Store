@@ -147,6 +147,7 @@ namespace GUI.Popups
             this.lbl_total.Size = new System.Drawing.Size(137, 26);
             this.lbl_total.TabIndex = 8;
             this.lbl_total.Text = "300$";
+            this.lbl_total.Click += new System.EventHandler(this.lbl_total_Click);
             // 
             // label10
             // 

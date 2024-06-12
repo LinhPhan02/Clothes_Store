@@ -79,9 +79,10 @@ namespace BLL
             }
             return qlnvDAL.Delete(index);
         }
+        List<NhanVienDTO> dsnv_tk;
         public DataTable Show(string text)
         {
-            List<NhanVienDTO> dsnv_tk = new List<NhanVienDTO>();
+            dsnv_tk = new List<NhanVienDTO>();
             dsnv_tk = qlnvDAL.Search(text);
             //Tìm kiếm nhân viên theo chuỗi nhập vào
             return qlnvDAL.Show(dsnv_tk);

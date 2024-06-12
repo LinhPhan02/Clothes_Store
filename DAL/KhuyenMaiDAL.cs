@@ -32,6 +32,7 @@ namespace DAL
                     km.start_day = read.GetString(2);
                     km.end_day= read.GetString(3);
                     km.discount_amount = read.GetInt32(4);
+                    km.status = read.GetInt32(5);
                     DsKM.Add(km);   //Thêm đối tượng vừa đọc vào List
                 }
                 conn.Close();
@@ -51,7 +52,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"INSERT INTO discount (discount_id, discount_name, start_day, end_day, discount_amount) VALUES ('{km.discount_id}', '{km.discount_name}', '{km.start_day}','{km.end_day}', '{km.discount_amount}')";
+                string query = $"INSERT INTO discount (discount_id, discount_name, start_day, end_day, discount_amount, status) VALUES ('{km.discount_id}', '{km.discount_name}', '{km.start_day}','{km.end_day}', '{km.discount_amount}', 1)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -66,6 +67,32 @@ namespace DAL
                 conn.Close();   //Đóng kết nối
             }
 
+        }
+        public bool Delete(string index)
+        {
+            conn.Open();
+            try
+            {
+                foreach (KhuyenMaiDTO km in DsKM)
+                {
+                    if (km.discount_id.Equals(index)) //Nếu mã khuyến mãi bằng giá trị ô được chọn của cột "discount_id" thì mới cập nhật lại status
+                    {
+                        string query = "UPDATE discount SET status = 0 WHERE discount_id = '" + index + "'";
+                        MySqlCommand cmd = new MySqlCommand(query, conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
+                return false;
+            }
+            finally
+            {
+                conn.Close();   //Đóng kết nối
+            }
         }
 
         public List<KhuyenMaiDTO> Search(string text, string number)
@@ -122,21 +149,23 @@ namespace DAL
 
             foreach (KhuyenMaiDTO km in DsKM)
             {
-                DataRow data = dtb.NewRow();
-
-                data["Mã khuyến mãi"] = km.getDiscount_id;
-                data["Tên khuyến mãi"] = km.discount_name;
-                data["Ngày bắt đầu"] = km.start_day;
-                data["Ngày kết thúc"] = km.end_day;
-                data["Giảm giá (%)"] = km.discount_amount;
-
-                dtb.Rows.Add(data); //Thêm đối tượng vào bảng
-
-                for (int i = 0; i < dtb.Rows.Count; i++)
+                if (km.status == 1)
                 {
-                    data["STT"] = i + 1;    //set số thứ tự tăng dần cho bảng
-                }
+                    DataRow data = dtb.NewRow();
 
+                    data["Mã khuyến mãi"] = km.getDiscount_id;
+                    data["Tên khuyến mãi"] = km.discount_name;
+                    data["Ngày bắt đầu"] = km.start_day;
+                    data["Ngày kết thúc"] = km.end_day;
+                    data["Giảm giá (%)"] = km.discount_amount;
+
+                    dtb.Rows.Add(data); //Thêm đối tượng vào bảng
+
+                    for (int i = 0; i < dtb.Rows.Count; i++)
+                    {
+                        data["STT"] = i + 1;    //set số thứ tự tăng dần cho bảng
+                    }
+                }
             }
             return dtb;
         }

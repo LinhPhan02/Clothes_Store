@@ -22,12 +22,12 @@ namespace GUI.Screens
         List<CategoryStaffsDTO> listDanhMuc = new List<CategoryStaffsDTO>();
         List<string> listIcon = new List<string>() {
             "btn_banhang.Image",
+            "btn_khuyenmai.Image",
             "btn_sanpham.Image",
             "btn_danhmuc.Image",
             "btn_nhacungcap.Image",
             "btn_nhanvien.Image",
             "btn_khachhang.Image",
-            "btn_baohanh.Image",
             "btn_nhapxuat.Image",
             "btn_thongke.Image"
         };
@@ -354,7 +354,6 @@ namespace GUI.Screens
             pnl_chonquyen.Controls.Add(lbl_titleChonQuyen);
 
             //***************************************************************
-
             ck = new CheckBox[listquyen.Count];
             for (int i = 0; i < listquyen.Count; i++)
             {

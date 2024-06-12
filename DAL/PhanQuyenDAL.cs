@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using DTO;
 using MySql.Data.MySqlClient;
@@ -29,12 +30,12 @@ namespace DAL
             return data;
         }
         public static bool _AddPermission(string idDanhMucNhanVien, string idQuyen)
-        {
+        { 
             try
             {
                 MySqlConnection conn = SqlConnectionData.Connect();
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"INSERT INTO `privilege_detail`(`CategoryStaffs_id`, `url_match_privilege_id`, `updatedAt`) VALUES ('{idDanhMucNhanVien}','{idQuyen}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}')", conn);
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO privilege_detail (CategoryStaffs_id, url_match_privilege_id, updateAt) VALUES ('{idDanhMucNhanVien}','{idQuyen}','{DateTime.Now.ToString("yyyy-MM-dd")}')", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -152,32 +153,42 @@ namespace DAL
 
         public static bool AddData(int id, string name)
         {
+            MySqlConnection conn = SqlConnectionData.Connect();
+            conn.Open();
             try
             {
-                MySqlConnection conn = SqlConnectionData.Connect();
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"INSERT INTO  categorystaffs VALUE({id},'{name}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}','1')", conn);
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO categorystaffs VALUE({id},'{name}','{DateTime.Now.ToString("yyyy-MM-dd")}','{DateTime.Now.ToString("yyyy-MM-dd")}','1')", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (MySqlException error)
             {
+                MessageBox.Show("Error: " + error);    //Hiển thị lỗi nếu có
                 return false;
+            }
+            finally
+            {
+                conn.Close();   //Đóng kết nối
             }
         }
         public static bool UpdateData(int id, string name)
         {
+            MySqlConnection conn = SqlConnectionData.Connect();
+            conn.Open();
             try
             {
-                MySqlConnection conn = SqlConnectionData.Connect();
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"UPDATE `categorystaffs` SET `name`='{name}',`updateAt`='{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff")}' WHERE id={id}", conn);
+                MySqlCommand cmd = new MySqlCommand($"UPDATE `categorystaffs` SET `name`='{name}',`updateAt`='{DateTime.Now.ToString("yyyy-MM-dd")}' WHERE id={id}", conn);
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (MySqlException error)
             {
+                MessageBox.Show("Error: " + error);    //Hiển thị lỗi nếu có
                 return false;
+            }
+            finally
+            {
+                conn.Close();   //Đóng kết nối
             }
         }
         public static bool DeleteData(int id)

@@ -17,6 +17,14 @@ namespace GUI.Screens
             InitializeComponent();
             sanPhamQLSP1.BringToFront();
             sanPhamQLSP1.resetData();
+            if (Login._checkUrlMatch("thanhtoangiohang:QLSP"))
+            {
+                button3.Visible = true;
+            }
+            else
+            {
+                button3.Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

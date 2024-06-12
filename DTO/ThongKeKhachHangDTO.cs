@@ -10,9 +10,9 @@ namespace DTO
     {
         public string id { get; set; }  
         public string name { get; set; }
-        public string soluongdon { get; set; }
+        public int soluongdon { get; set; }
         public string tongtien { get; set; }
-        public ThongKeKhachHangDTO(string id, string name, string soluongdon, string tongtien)
+        public ThongKeKhachHangDTO(string id, string name, int soluongdon, string tongtien)
         {
             this.id = id;
             this.name = name;

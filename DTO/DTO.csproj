@@ -42,8 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoHanhDTO.cs" />
-    <Compile Include="ChiTietBaoHanhDTO.cs" />
     <Compile Include="CategoryStaffsDTO.cs" />
     <Compile Include="CheckedPermissionsDTO.cs" />
     <Compile Include="ChiTietPhieuDTO.cs" />

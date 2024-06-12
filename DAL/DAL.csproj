@@ -116,8 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHangDAL.cs" />
-    <Compile Include="BaoHanhDAL.cs" />
-    <Compile Include="ChiTietBaoHanhDAL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DanhMucDAL.cs" />
     <Compile Include="KhuyenMaiDAL.cs" />

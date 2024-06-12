@@ -111,7 +111,7 @@ namespace DAL
                 {
                     if (nv.phone.Equals(index)) //Nếu số điện thoại bằng giá trị ô được chọn của cột "Số điện thoại" thì mới cập nhật lại status
                     {
-                        string query = "UPDATE staffs SET status = '" + nv.status + "' WHERE phoneNumber = '" + index + "'";
+                        string query = "UPDATE staffs SET status = 0 WHERE phoneNumber = '" + index + "'";
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                     }
@@ -128,16 +128,15 @@ namespace DAL
                 conn.Close();   //Đóng kết nối
             }
         }
-
+        
         public List<NhanVienDTO> Search(string text)
         {
-            text = text.ToLower();
             try 
             { 
                 foreach (NhanVienDTO nv in dsnv)
                 {
                     conn.Open();
-                    string query = "SELECT * FROM staffs WHERE name LIKE '" + text + "' OR phoneNumber LIKE '" + text + "'";
+                    string query = "SELECT * FROM staffs WHERE name LIKE '" + text.ToLower() + "' OR phoneNumber LIKE '" + text + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataReader read = cmd.ExecuteReader();
                     found = new List<NhanVienDTO>();

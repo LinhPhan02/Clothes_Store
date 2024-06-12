@@ -19,6 +19,7 @@ namespace BLL
         }
         public static bool _AddPermission(string idDanhMucNhanVien, string idQuyen)
         {
+            
             if (idDanhMucNhanVien == "")
             {
                 return false;
@@ -27,6 +28,7 @@ namespace BLL
             {
                 return false;
             }
+            
             return PhanQuyenDAL._AddPermission(idDanhMucNhanVien, idQuyen);
         }
         public static bool _DelPermission(string idDanhMucNhanVien, string idQuyen)
@@ -63,11 +65,7 @@ namespace BLL
         }
         public static bool AddData(int id, string name)
         {
-            if (id + "" == "")
-            {
-                return false;
-            }
-            else if (name == "")
+            if (name == "")
             {
                 return false;
             }

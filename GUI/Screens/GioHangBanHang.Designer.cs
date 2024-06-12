@@ -63,7 +63,6 @@ namespace GUI.Screens
             this.button2.Text = "Thanh toán";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.Paint += new System.Windows.Forms.PaintEventHandler(this.button2_Paint);
             // 
             // label8
             // 
@@ -72,7 +71,6 @@ namespace GUI.Screens
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 26);
             this.label8.TabIndex = 9;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -83,7 +81,6 @@ namespace GUI.Screens
             this.label7.Size = new System.Drawing.Size(187, 35);
             this.label7.TabIndex = 8;
             this.label7.Text = "TOTAL:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // flow_spbh
             // 
@@ -114,7 +111,6 @@ namespace GUI.Screens
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(917, 71);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button4
             // 
@@ -155,7 +151,6 @@ namespace GUI.Screens
             this.button3.TabIndex = 7;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -267,9 +262,6 @@ namespace GUI.Screens
             this.Controls.Add(this.label7);
             this.Name = "GioHangBanHang";
             this.Size = new System.Drawing.Size(960, 564);
-            this.Load += new System.EventHandler(this.GioHangBanHang_Load);
-            this.Click += new System.EventHandler(this.GioHangBanHang_Click);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.GioHangBanHang_Paint);
             this.flow_spbh.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
